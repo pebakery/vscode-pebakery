@@ -1,0 +1,140 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "PEBakery",
+	"scopeName": "source.pebakery",
+	"patterns": [
+        { "include": "#punctuations" },
+        { "include": "#comments" },
+        { "include": "#strings" },
+        { "include": "#variables" },
+        { "include": "#constants" },
+        { "include": "#entities" },
+        { "include": "#keywords" },
+        { "include": "#markups" }
+    ],
+	"repository": {
+        "punctuations": {
+            "patterns": [
+                {
+                    "name": "punctuation.separator.pebakery",
+                    "match": "[, ]"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [{
+                "name": "comment.line.pebakery",
+                "match": "^(\\/\\/|#).*$"
+            }]
+        },
+        "strings": {
+			"name": "string.quoted.double.pebakery",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.pebakery",
+					"match": "#\\$[a-zA-Z]"
+				}
+			]
+        },
+        "variables": {
+            "patterns": [
+                {
+                    "name": "variable.other.pebakery",
+                    "match": "%[^%]+%"
+                },
+                {
+                    "name": "variable.parameter.pebakery",
+                    "match": "#[0-9]"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.language.pebakery",
+                    "match": "(?i)\\b(True|False|None)\\b"
+                },
+                { 
+                    "name": "constant.language.pebakery",
+                    "match": "(?i)\\b(Title|Type|Author|Description|Credits|Version|Download_Level|Level|Selected|Mandatory|NoWarning|Contact|Date|Interface|InterfaceList|Depend|Disable|History|lines|WebTitle|Type|Author|Description|Credits|Version|Download_Level|Level|Selected|Mandatory|NoWarning|Contact[0-9]*|Date|Interface|InterfaceList|Depend|Disable|History[0-9]*[a-z]?|HistoryNotes[0-9]*|lines|Web[0-9]*)\\b"
+                },
+                { 
+                    "name": "constant.language.pebakery",
+                    "match": "(?i)\\b(HKLM|HKCU|HKCR|HKU|HKCC)\\b"
+                },
+                {
+                    "name": "constant.language.pebakery",
+                    "match": "(?i)\\b(Normal|Bold)\\b"
+                },
+                {
+                    "name": "constant.numeric.hex.pebakery",
+                    "match": "\\b0x[0-9a-fA-F]+\\b"
+                },
+                {
+                    "name": "constant.numeric.float.pebakery",
+                    "match": "\\b[0-9]+\\.[0-9]+(\\.[0-9]+)?(\\.[0-9]+)?\\b"
+                },
+                {
+                    "name": "constant.numeric.float.pebakery",
+                    "match": "\\b(-)?[0-9]+\\.[0-9]+\\b"
+                },
+                {
+                    "name": "constant.numeric.integer.pebakery",
+                    "match": "\\b(-)?[0-9]+\\b"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "punctuation.definition.keyword.pebakery",
+                    "match": "="
+                },
+                {
+                    "name": "keyword.control.pebakery",
+                    "match": "(?i)\\b(Expand|CopyOrExpand|DirCopy|DirDelete|DirMove|DirMake|FileCopy|FileDelete|FileRename|FileMove|FileCreateBlank|RegHiveLoad|RegHiveUnload|RegImport|RegExport|RegWrite|RegRead|RegDelete|RegWriteBin|RegReadBin|RegMulti|TXTAddLine|TXTReplace|TXTDelLine|TXTDelSpaces|TXTDelEmptyLines|INIRead|INIWrite|INIDelete|INIAddSection|INIDeleteSection|INIWriteTextLine|INIMerge|WebGet|WebGetIfNotExist|ExtractFile|ExtractAndRun|ExtractAllFiles|Encode|Message|Echo|Retrieve|Visible|StrFormat|System|ShellExecute|ShellExecuteEx|ShellExecuteDelete|Run|Exec|Loop|If|Else|Begin|End|Set|GetParam|PackParam|AddVariables|Exit|Halt|Wait|Beep)\\b"
+                }
+            ]
+        },
+        "entities": {
+            "patterns": [
+                {
+                    "name": "storage.modifier.pebakery",
+                    "match": "\\[[^\\[\\]]*\\]"
+                },
+                {
+                    "name": "entity.name.function.pebakery",
+                    "match": "(?i)\\b(Dir|File|FileSize|FileVersion|DirSize)\\b"
+                },
+                {
+                    "name": "entity.name.function.pebakery",
+                    "match": "(?i)\\b(MD5|SHA1|SHA256|SHA384|SHA512)\\b"
+                },
+                {
+                    "name": "entity.name.function.pebakery",
+                    "match": "(?i)\\b(Bytes|Ceil|Floor|Round|Date|FileName|DirPath|Ext|Inc|Dec|Mult|Div|Left|Right|SubStr|Len|LTrim|RTrim|CTrim|NTRim|Pos|Replace|ReplaceX|ShortPath|LongPath|Split)\\b"
+                },
+                {
+                    "name": "entity.name.function.pebakery",
+                    "match": "(?i)\\b(Cursor|ErrorOff|GetEnv|GetFreeDrive|GetFreeSpace|IsAdmin|Log|OnBuildExit|OnScriptExit|OnPluginExit|RefreshInterface|RescanScript|Rescan|SaveLog|SplitParameters)\\b"
+                },
+                {
+                    "name": "entity.name.function.pebakery",
+                    "match": "(?i)\\b(Not|ExistFile|ExistDir|ExistSection|ExistRegSection|ExistRegKey|ExistVar|ExistMacro|Equal|EqualX|Smaller|SmallerEqual|Bigger|BiggerEqual|==|!=|<|<=|>|>=|===|Ping|Online|Question)\\b"
+                },
+                {
+                    "name": "entity.name.function.pebakery",
+                    "match": "(?i)\\b(Append|Prepend|Before|Behind|Place|Delete|Index)\\b"
+                }
+            ]
+        },
+        "markups": {
+            "patterns": [{
+                "name": "markup.underline.link.pebakery",
+                "match": "(?i)\\b(http://.+|https://.+)\\b"
+            }]
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "pebakery",
+    "displayName": "PEBakery",
+    "description": "PEBakery Syntax Highlighter",
+    "version": "1.0.0",
+    "publisher": "joveler",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "pebakery",
+            "aliases": ["PEBakery", "pebakery"],
+            "extensions": [".script",".project"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "pebakery",
+            "scopeName": "source.pebakery",
+            "path": "./syntaxes/PEBakery.tmLanguage.json"
+        }]
+    }
+}
