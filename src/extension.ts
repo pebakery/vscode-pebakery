@@ -10,7 +10,7 @@ export function activate(context: vscode.ExtensionContext) {
     const config = vscode.workspace.getConfiguration();
     config.update("[pebakery]", {
         "editor.wordBasedSuggestions": false
-    });
+    }, true);
 }
 
 // this method is called when your extension is deactivated
