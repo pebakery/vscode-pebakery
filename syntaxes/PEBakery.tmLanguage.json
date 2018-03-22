@@ -22,19 +22,21 @@
             ]
         },
         "comments": {
-            "patterns": [{
-                "name": "comment.line.pebakery",
-                "match": "^(\\/\\/|#).*$"
-            }]
+            "patterns": [
+                {
+                    "name": "comment.line.pebakery",
+                    "match": "^(\\/\\/|#).*$"
+                }
+            ]
         },
         "strings": {
 			"name": "string.quoted.double.pebakery",
 			"begin": "\"",
-			"end": "\"",
+			"end": "(\"|\n)",
 			"patterns": [
 				{
 					"name": "constant.character.escape.pebakery",
-					"match": "#\\$[a-zA-Z]"
+					"match": "(#\\$(c|p|q|s|t|x)|##)"
 				}
 			]
         },
@@ -46,7 +48,7 @@
                 },
                 {
                     "name": "variable.parameter.pebakery",
-                    "match": "#[0-9]"
+                    "match": "#([0-9]|c|a|r)"
                 }
             ]
         },
@@ -58,7 +60,7 @@
                 },
                 { 
                     "name": "constant.language.pebakery",
-                    "match": "(?i)\\b(Title|Type|Author|Description|Credits|Version|Download_Level|Level|Selected|Mandatory|NoWarning|Contact|Date|Interface|InterfaceList|Depend|Disable|History|lines|WebTitle|Type|Author|Description|Credits|Version|Download_Level|Level|Selected|Mandatory|NoWarning|Contact[0-9]*|Date|Interface|InterfaceList|Depend|Disable|History[0-9]*[a-z]?|HistoryNotes[0-9]*|lines|Web[0-9]*)\\b"
+                    "match": "(?i)\\b(Title|Description|Author|Version|Level|Selected|Mandatory|NoWarning|Interface|InterfaceList|Depend|Disable|History|lines)\\b"
                 },
                 { 
                     "name": "constant.language.pebakery",
@@ -94,7 +96,7 @@
                 },
                 {
                     "name": "keyword.control.pebakery",
-                    "match": "(?i)\\b(Expand|CopyOrExpand|DirCopy|DirDelete|DirMove|DirMake|FileCopy|FileDelete|FileRename|FileMove|FileCreateBlank|RegHiveLoad|RegHiveUnload|RegImport|RegExport|RegWrite|RegRead|RegDelete|RegWriteBin|RegReadBin|RegMulti|TXTAddLine|TXTReplace|TXTDelLine|TXTDelSpaces|TXTDelEmptyLines|INIRead|INIWrite|INIDelete|INIAddSection|INIDeleteSection|INIWriteTextLine|INIMerge|WebGet|WebGetIfNotExist|ExtractFile|ExtractAndRun|ExtractAllFiles|Encode|Message|Echo|Retrieve|Visible|StrFormat|System|ShellExecute|ShellExecuteEx|ShellExecuteDelete|Run|Exec|Loop|If|Else|Begin|End|Set|GetParam|PackParam|AddVariables|Exit|Halt|Wait|Beep)\\b"
+                    "match": "(?i)\\b(FileCopy|FileDelete|FileRename|FileCreateBlank|FileSize|FileVersion|DirCopy|DirDelete|DirMove|DirMake|DirSize|PathMove|RegHiveLoad|RegHiveUnload|RegRead|RegWrite|RegDelete|RegMulti|RegImport|RegExport|TXTAddLine|TXTReplace|TXTDelLine|TXTDelSpaces|TXTDelEmptyLines|INIRead|INIWrite|INIDelete|INIReadSection|INIAddSection|INIDeleteSection|INIWriteTextLine|INIMerge|Compress|Decompress|Expand|CopyOrExpand|WebGet|ExtractFile|ExtractAndRun|ExtractAllFiles|Encode|Visible|ReadInterface|WriteInterface|Message|Echo|EchoFile|AddInterface|UserInput|Hash|StrFormat|Math|WimMount|WimUnmount|WimInfo|WimApply|WimExtract|WimExtractBulk|WimCapture|WimAppend|WimDelete|WimPathAdd|WimPathDelete|WimPathRename|WimOptimize|WimExport|Run|Exec|Loop|LoopLetter|If|Else|Begin|End|Set|SetMacro|AddVariables|Exit|Halt|Wait|Beep|GetParam|PackParam|System|ShellExecute|ShellExecuteEx|ShellExecuteDelete)\\b"
                 }
             ]
         },
@@ -106,7 +108,7 @@
                 },
                 {
                     "name": "entity.name.function.pebakery",
-                    "match": "(?i)\\b(Dir|File|FileSize|FileVersion|DirSize)\\b"
+                    "match": "(?i)\\b(DirPath|FilePath)\\b"
                 },
                 {
                     "name": "entity.name.function.pebakery",
@@ -114,15 +116,23 @@
                 },
                 {
                     "name": "entity.name.function.pebakery",
-                    "match": "(?i)\\b(Bytes|Ceil|Floor|Round|Date|FileName|DirPath|Ext|Inc|Dec|Mult|Div|Left|Right|SubStr|Len|LTrim|RTrim|CTrim|NTRim|Pos|Replace|ReplaceX|ShortPath|LongPath|Split)\\b"
+                    "match": "(?i)\\b(IntToBytes|BytesToInt|Hex|Ceil|Floor|Round|Date|FileName|Ext|PathCombine|Inc|Dec|Mult|Div|Left|Right|SubStr|Len|LTrim|RTrim|CTrim|NTrim|UCase|LCase|Pos|PosX|Replace|ReplaceX|Split)\\b"
                 },
                 {
                     "name": "entity.name.function.pebakery",
-                    "match": "(?i)\\b(Cursor|ErrorOff|GetEnv|GetFreeDrive|GetFreeSpace|IsAdmin|Log|OnBuildExit|OnScriptExit|OnPluginExit|RefreshInterface|RescanScript|Rescan|SaveLog|SplitParameters)\\b"
+                    "match": "(?i)\\b(Add|Sub|Mul|Div|IntDiv|Neg|IntSign|IntUnsign|BoolAnd|BoolOr|BoolXor|BoolNot|BitAnd|BitOr|BitXor|BitNot|BitShift|Floor|Ceil|Round|Abs|Pow|Hex)\\b"
                 },
                 {
                     "name": "entity.name.function.pebakery",
-                    "match": "(?i)\\b(Not|ExistFile|ExistDir|ExistSection|ExistRegSection|ExistRegKey|ExistVar|ExistMacro|Equal|EqualX|Smaller|SmallerEqual|Bigger|BiggerEqual|==|!=|<|<=|>|>=|===|Ping|Online|Question)\\b"
+                    "match": "(?i)\\b(Cursor|ErrorOff|GetEnv|GetFreeDrive|GetFreeSpace|HasUAC|IsAdmin|OnBuildExit|OnScriptExit|OnPluginExit|RebuildVars|RefreshInterface|RescanScripts|SaveLog|SetLocal|EndLocal)\\b"
+                },
+                {
+                    "name": "entity.name.function.pebakery",
+                    "match": "(?i)\\b(Text|Width|Height|Value)\\b"
+                },
+                {
+                    "name": "entity.name.function.pebakery",
+                    "match": "(?i)\\b(ExistFile|ExistDir|ExistSection|ExistRegSubKey|ExistRegValue|ExistVar|ExistMacro|ExistRegMulti|WimExistIndex|WimExistFile|WimExistDir|Equal|NotEqual|Smaller|SmallerEqual|Bigger|BiggerEqual|EqualX|Ping|Online|Not|Question|==|!=|<|<=|>|>=|===)\\b"
                 },
                 {
                     "name": "entity.name.function.pebakery",

@@ -11,16 +11,26 @@
         "Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "pebakery",
-            "aliases": ["PEBakery", "pebakery"],
-            "extensions": [".script",".project"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "pebakery",
-            "scopeName": "source.pebakery",
-            "path": "./syntaxes/PEBakery.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "pebakery",
+                "aliases": ["PEBakery", "pebakery"],
+                "extensions": [".script",".project"],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "pebakery",
+                "scopeName": "source.pebakery",
+                "path": "./syntaxes/PEBakery.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "pebakery",
+                "path": "./snippets/PEBakery.snippets.json"
+            }
+        ]
     }
 }

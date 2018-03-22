@@ -1,0 +1,28 @@
+{
+    "EmptyScript": {
+        "prefix": "EmptyScript",
+        "body": [
+            "[Main]",
+            "Title=${1:title}",
+            "Description=${2:description}",
+            "Author=${3:author}",
+            "Version=${4:version}",
+            "Selected=${5:True}",
+            "",
+            "[Interface]",
+            "",
+            "[Process]",
+            "$0",
+            ""
+        ],
+        "description": "Empty Script Template "
+    },
+    "FileCopy": { 
+        "prefix": "FileCopy",
+        "body": [
+            "FileCopy,${1:<SrcFile>},${2:<DestPath>}",
+            "$0"
+        ],
+        "description": "FileCopy,<SrcFile>,<DestPath>,[PRESERVE],[NOWARN],[NOREC] "
+    }
+}
