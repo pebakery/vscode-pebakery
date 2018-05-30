@@ -24,5 +24,173 @@
             "$0"
         ],
         "description": "FileCopy,<SrcFile>,<DestPath>,[PRESERVE],[NOWARN],[NOREC] "
+    },
+    "FileDelete": { 
+        "prefix": "FileDelete",
+        "body": [
+            "FileDelete,${1:<FilePath>}",
+            "$0"
+        ],
+        "description": "FileDelete,<FilePath>,[NOWARN],[NOREC] "
+    },
+    "FileRename": { 
+        "prefix": "FileRename",
+        "body": [
+            "FileRename,${1:<SrcPath>},${2:<DestPath>}",
+            "$0"
+        ],
+        "description": "FileRename,<SrcPath>,<DestPath> "
+    },
+    "FileMove": { 
+        "prefix": "FileMove",
+        "body": [
+            "FileMove,${1:<SrcPath>},${2:<DestPath>}",
+            "$0"
+        ],
+        "description": "FileMove,<SrcPath>,<DestPath> "
+    },
+    "FileCreateBlank": { 
+        "prefix": "FileCreateBlank",
+        "body": [
+            "FileCreateBlank,${1:<FilePath>}",
+            "$0"
+        ],
+        "description": "FileCreateBlank,<FilePath>,[Encoding],[PRESERVE],[NOWARN] "
+    },
+    "FileSize": { 
+        "prefix": "FileSize",
+        "body": [
+            "FileSize,${1:<FilePath>},${2:<DestVar>}",
+            "$0"
+        ],
+        "description": "FileSize,<FilePath>,<DestVar> "
+    },
+    "FileVersion": { 
+        "prefix": "FileVersion",
+        "body": [
+            "FileVersion,${1:<FilePath>},${2:<DestVar>}",
+            "$0"
+        ],
+        "description": "FileVersion,<FilePath>,<DestVar> "
+    },
+    "DirCopy": { 
+        "prefix": "DirCopy",
+        "body": [
+            "DirCopy,${1:<SrcDir>},${2:<DestPath>}",
+            "$0"
+        ],
+        "description": "DirCopy,<SrcDir>,<DestPath> "
+    },
+    "DirDelete": { 
+        "prefix": "DirDelete",
+        "body": [
+            "DirDelete,${1:<DirPath>}",
+            "$0"
+        ],
+        "description": "DirDelete,<DirPath> "
+    },
+    "DirMove": { 
+        "prefix": "DirMove",
+        "body": [
+            "DirMove,${1:<SrcDir>},${2:<DestPath>}",
+            "$0"
+        ],
+        "description": "DirMove,<SrcDir>,<DestPath> "
+    },
+    "DirMake": { 
+        "prefix": "DirMake",
+        "body": [
+            "DirMake,${1:<DestDir>}",
+            "$0"
+        ],
+        "description": "DirMake,<DestDir> "
+    },
+    "DirSize": { 
+        "prefix": "DirSize",
+        "body": [
+            "DirSize,${1:<DirPath>},${2:<DestVar>}",
+            "$0"
+        ],
+        "description": "DirSize,<DirPath>,<DestVar> "
+    },
+    "PathMove": { 
+        "prefix": "PathMove",
+        "body": [
+            "PathMove,${1:<SrcPath>},${2:<DestPath>}",
+            "$0"
+        ],
+        "description": "PathMove,<SrcPath>,<DestPath> "
+    },
+    "RegHiveLoad": { 
+        "prefix": "RegHiveLoad",
+        "body": [
+            "RegHiveLoad,${1:<KeyPath>},${2:<HiveFile>}",
+            "$0"
+        ],
+        "description": "RegHiveLoad,<KeyPath>,<HiveFile> "
+    },
+    "RegHiveUnload": { 
+        "prefix": "RegHiveUnload",
+        "body": [
+            "RegHiveUnload,${1:<KeyPath>}",
+            "$0"
+        ],
+        "description": "RegHiveLoad,<KeyPath> "
+    },
+    "RegRead": { 
+        "prefix": "RegRead",
+        "body": [
+            "RegRead,${1:<HKey>},${2:<KeyPath>},${3:<ValueName>},${4:<DestVar>}",
+            "$0"
+        ],
+        "description": "RegRead,<HKey>,<KeyPath>,<ValueName>,<DestVar> "
+    },
+    "RegWrite": { 
+        "prefix": "RegWrite",
+        "body": [
+            "RegWrite,${1:<HKey>},${2:<ValueType>},${3:<KeyPath>},${4:<ValueName>},${5:<ValueData>}",
+            "$0"
+        ],
+        "description": "RegWrite,<HKey>,<ValueType>,<KeyPath>,<ValueName>,<ValueData>,[NOWARN] "
+    },
+    "RegDelete": { 
+        "prefix": "RegDelete",
+        "body": [
+            "RegDelete,${1:<HKey>},${2:<KeyPath>},${3:[ValueName]}",
+            "$0"
+        ],
+        "description": "RegDelete,<HKey>,<KeyPath>,[ValueName] "
+    },
+    "RegMulti": { 
+        "prefix": "RegMulti",
+        "body": [
+            "RegMulti,${1:<HKey>},${2:<KeyPath>},${3:<ValueName>},${4:<Type>},${5:<Arg1>},${6:[Arg2]}",
+            "$0"
+        ],
+        "description": "RegMulti,<HKey>,<KeyPath>,<ValueName>,<Type>,<Arg1>,[Arg2] "
+    },
+    "RegImport": { 
+        "prefix": "RegImport",
+        "body": [
+            "RegImport,${1:<RegFile>}",
+            "$0"
+        ],
+        "description": "RegImport,<RegFile> "
+    },
+    "RegExport": { 
+        "prefix": "RegExport",
+        "body": [
+            "RegExport,${1:<Key>},${2:<RegFile>}",
+            "$0"
+        ],
+        "description": "RegExport,<Key>,<RegFile> "
+    },
+    "RegCopy": { 
+        "prefix": "RegCopy",
+        "body": [
+            "RegCopy,${1:<SrcKey>},${2:<SrcKeyPath>},${3:<DestKey>},${4:<DestKeyPath>}",
+            "$0"
+        ],
+        "description": "RegCopy,<SrcKey>,<SrcKeyPath>,<DestKey>,<DestKeyPath>,[WILDCARD] "
     }
 }
