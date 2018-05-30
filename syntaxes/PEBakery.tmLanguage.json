@@ -36,7 +36,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.pebakery",
-					"match": "(#\\$(c|p|q|s|t|x)|##)"
+					"match": "(#\\$(c|p|q|s|t|x)|##|%[^%]+%)"
 				}
 			]
         },
@@ -60,7 +60,7 @@
                 },
                 { 
                     "name": "constant.language.pebakery",
-                    "match": "(?i)\\b(Title|Description|Author|Version|Level|Selected|Mandatory|NoWarning|Interface|InterfaceList|Depend|Disable|History|lines)\\b"
+                    "match": "(?i)\\b(Title|Description|Author|Credits|Version|Level|Selected|Mandatory|NoWarning|Interface|InterfaceList|Depend|Disable|History|lines)\\b"
                 },
                 { 
                     "name": "constant.language.pebakery",
@@ -96,7 +96,7 @@
                 },
                 {
                     "name": "keyword.control.pebakery",
-                    "match": "(?i)\\b(FileCopy|FileDelete|FileRename|FileCreateBlank|FileSize|FileVersion|DirCopy|DirDelete|DirMove|DirMake|DirSize|PathMove|RegHiveLoad|RegHiveUnload|RegRead|RegWrite|RegDelete|RegMulti|RegImport|RegExport|TXTAddLine|TXTReplace|TXTDelLine|TXTDelSpaces|TXTDelEmptyLines|INIRead|INIWrite|INIDelete|INIReadSection|INIAddSection|INIDeleteSection|INIWriteTextLine|INIMerge|Compress|Decompress|Expand|CopyOrExpand|WebGet|ExtractFile|ExtractAndRun|ExtractAllFiles|Encode|Visible|ReadInterface|WriteInterface|Message|Echo|EchoFile|AddInterface|UserInput|Hash|StrFormat|Math|WimMount|WimUnmount|WimInfo|WimApply|WimExtract|WimExtractBulk|WimCapture|WimAppend|WimDelete|WimPathAdd|WimPathDelete|WimPathRename|WimOptimize|WimExport|Run|Exec|Loop|LoopLetter|If|Else|Begin|End|Set|SetMacro|AddVariables|Exit|Halt|Wait|Beep|GetParam|PackParam|System|ShellExecute|ShellExecuteEx|ShellExecuteDelete)\\b"
+                    "match": "(?i)\\b(FileCopy|FileDelete|FileRename|FileCreateBlank|FileSize|FileVersion|DirCopy|DirDelete|DirMove|DirMake|DirSize|PathMove|RegHiveLoad|RegHiveUnload|RegRead|RegWrite|RegDelete|RegMulti|RegImport|RegExport|RegCopy|TXTAddLine|TXTReplace|TXTDelLine|TXTDelSpaces|TXTDelEmptyLines|INIRead|INIWrite|INIDelete|INIReadSection|INIAddSection|INIDeleteSection|INIWriteTextLine|INIMerge|Compress|Decompress|Expand|CopyOrExpand|WebGet|ExtractFile|ExtractAndRun|ExtractAllFiles|Encode|Visible|ReadInterface|WriteInterface|Message|Echo|EchoFile|AddInterface|UserInput|Hash|StrFormat|Math|WimMount|WimUnmount|WimInfo|WimApply|WimExtract|WimExtractBulk|WimCapture|WimAppend|WimDelete|WimPathAdd|WimPathDelete|WimPathRename|WimOptimize|WimExport|Run|Exec|Loop|LoopLetter|If|Else|Begin|End|Set|SetMacro|AddVariables|Exit|Halt|Wait|Beep|GetParam|PackParam|System|ShellExecute|ShellExecuteEx|ShellExecuteDelete)\\b"
                 }
             ]
         },
@@ -124,11 +124,11 @@
                 },
                 {
                     "name": "entity.name.function.pebakery",
-                    "match": "(?i)\\b(Cursor|ErrorOff|GetEnv|GetFreeDrive|GetFreeSpace|HasUAC|IsAdmin|OnBuildExit|OnScriptExit|OnPluginExit|RebuildVars|RefreshInterface|RescanScripts|SaveLog|SetLocal|EndLocal)\\b"
+                    "match": "(?i)\\b(Cursor|ErrorOff|GetEnv|GetFreeDrive|GetFreeSpace|HasUAC|IsAdmin|OnBuildExit|OnScriptExit|OnPluginExit|RebuildVars|RefreshInterface|RefreshAllScripts|RescanScripts|LoadNewScript|RefreshScript|SaveLog|SetLocal|EndLocal)\\b"
                 },
                 {
                     "name": "entity.name.function.pebakery",
-                    "match": "(?i)\\b(Text|Width|Height|Value)\\b"
+                    "match": "(?i)\\b(Text|Width|Height|Value|Tooltip|FontSize|FontWeight|FontStyle|NumberMin|NumberMax|NumberTick|Url|Items|SectionName|HideProgress)\\b"
                 },
                 {
                     "name": "entity.name.function.pebakery",
