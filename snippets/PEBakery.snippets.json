@@ -60,18 +60,18 @@
     "FileSize": { 
         "prefix": "FileSize",
         "body": [
-            "FileSize,${1:<FilePath>},${2:<DestVar>}",
+            "FileSize,${1:<FilePath>},${2:<%DestVar%>}",
             "$0"
         ],
-        "description": "FileSize,<FilePath>,<DestVar> "
+        "description": "FileSize,<FilePath>,<%DestVar%> "
     },
     "FileVersion": { 
         "prefix": "FileVersion",
         "body": [
-            "FileVersion,${1:<FilePath>},${2:<DestVar>}",
+            "FileVersion,${1:<FilePath>},${2:<%DestVar%>}",
             "$0"
         ],
-        "description": "FileVersion,<FilePath>,<DestVar> "
+        "description": "FileVersion,<FilePath>,<%DestVar%> "
     },
     "DirCopy": { 
         "prefix": "DirCopy",
@@ -108,10 +108,10 @@
     "DirSize": { 
         "prefix": "DirSize",
         "body": [
-            "DirSize,${1:<DirPath>},${2:<DestVar>}",
+            "DirSize,${1:<DirPath>},${2:<%DestVar%>}",
             "$0"
         ],
-        "description": "DirSize,<DirPath>,<DestVar> "
+        "description": "DirSize,<DirPath>,<%DestVar%> "
     },
     "PathMove": { 
         "prefix": "PathMove",
@@ -140,10 +140,10 @@
     "RegRead": { 
         "prefix": "RegRead",
         "body": [
-            "RegRead,${1:<HKey>},${2:<KeyPath>},${3:<ValueName>},${4:<DestVar>}",
+            "RegRead,${1:<HKey>},${2:<KeyPath>},${3:<ValueName>},${4:<%DestVar%>}",
             "$0"
         ],
-        "description": "RegRead,<HKey>,<KeyPath>,<ValueName>,<DestVar> "
+        "description": "RegRead,<HKey>,<KeyPath>,<ValueName>,<%DestVar%> "
     },
     "RegWrite": { 
         "prefix": "RegWrite",
@@ -192,5 +192,253 @@
             "$0"
         ],
         "description": "RegCopy,<SrcKey>,<SrcKeyPath>,<DestKey>,<DestKeyPath>,[WILDCARD] "
+    },
+    "TXTAddLine": { 
+        "prefix": "TXTAddLine",
+        "body": [
+            "TXTAddLine,${1:<FileName>},${2:<Line>},${3:<Mode>}",
+            "$0"
+        ],
+        "description": "TXTAddLine,<FileName>,<Line>,<Mode> "
+    },
+    "TXTReplace": { 
+        "prefix": "TXTReplace",
+        "body": [
+            "TXTReplace,${1:<FileName>},${2:<OldStr>},${3:<NewStr>}",
+            "$0"
+        ],
+        "description": "TXTReplace,<FileName>,<OldStr>,<NewStr> "
+    },
+    "TXTDelLine": { 
+        "prefix": "TXTDelLine",
+        "body": [
+            "RegCopy,${1:<FileName>},${2:<Str>}",
+            "$0"
+        ],
+        "description": "TXTDelLine,<FileName>,<Str> "
+    },
+    "TXTDelSpaces": { 
+        "prefix": "TXTDelSpaces",
+        "body": [
+            "TXTDelSpaces,${1:<FileName>}",
+            "$0"
+        ],
+        "description": "TXTDelSpaces,<FileName> "
+    },
+    "TXTDelEmptyLines": { 
+        "prefix": "TXTDelEmptyLines",
+        "body": [
+            "TXTDelEmptyLines,${1:<FileName>}",
+            "$0"
+        ],
+        "description": "TXTDelEmptyLines,<FileName> "
+    },
+    "IniRead": { 
+        "prefix": "IniRead",
+        "body": [
+            "IniRead,${1:<FileName>},${2:<Section>},${3:<Key>},${4:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "IniRead,<FileName>,<Section>,<Key>,<%DestVar%> "
+    },
+    "IniWrite": { 
+        "prefix": "IniWrite",
+        "body": [
+            "IniWrite,${1:<FileName>},${2:<Section>},${3:<Key>},${4:<Value>}",
+            "$0"
+        ],
+        "description": "IniWrite,<FileName>,<Section>,<Key>,<Value> "
+    },
+    "IniDelete": { 
+        "prefix": "IniDelete",
+        "body": [
+            "IniDelete,${1:<FileName>},${2:<Section>},${3:<Key>}",
+            "$0"
+        ],
+        "description": "IniDelete,<FileName>,<Section>,<Key> "
+    },
+    "IniReadSection": { 
+        "prefix": "IniReadSection",
+        "body": [
+            "IniReadSection,${1:<FileName>},${2:<Section>},${3:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "IniReadSection,<FileName>,<Section>,<%DestVar%> "
+    },
+    "IniAddSection": { 
+        "prefix": "IniAddSection",
+        "body": [
+            "IniAddSection,${1:<FileName>},${2:<Section>}",
+            "$0"
+        ],
+        "description": "IniAddSection,<FileName>,<Section> "
+    },
+    "IniDeleteSection": { 
+        "prefix": "IniDeleteSection",
+        "body": [
+            "IniDeleteSection,${1:<FileName>},${2:<Section>}",
+            "$0"
+        ],
+        "description": "IniDeleteSection,<FileName>,<Section> "
+    },
+    "IniWriteTextLine": { 
+        "prefix": "IniWriteTextLine",
+        "body": [
+            "IniWriteTextLine,${1:<FileName>},${2:<Section>},${3:<Line>}",
+            "$0"
+        ],
+        "description": "IniWriteTextLine,<FileName>,<Section>,<Line>,[APPEND] "
+    },
+    "IniMerge": { 
+        "prefix": "IniMerge",
+        "body": [
+            "IniMerge,${1:<SrcFile>},${2:<DestFile>}",
+            "$0"
+        ],
+        "description": "IniMerge,<SrcFile>,<DestFile> "
+    },
+    "Compress": { 
+        "prefix": "Compress",
+        "body": [
+            "Compress,${1:<Format>},${2:<SrcPath>},${3:<DestArchive>}",
+            "$0"
+        ],
+        "description": "Compress,<Format>,<SrcPath>,<DestArchive>,[CompressLevel],[Encoding] "
+    },
+    "Decompress": { 
+        "prefix": "Decompress",
+        "body": [
+            "Decompress,${1:<SrcArchive>},${2:<DestDir>}",
+            "$0"
+        ],
+        "description": "Decompress,<SrcArchive>,<DestDir>,[Encoding] "
+    },
+    "Expand": { 
+        "prefix": "Expand",
+        "body": [
+            "Expand,${1:<SrcCab>},${2:<DestDir>}",
+            "$0"
+        ],
+        "description": "Expand,<SrcCab>,<DestDir>,[SingleFile],[PRESERVE],[NOWARN] "
+    },
+    "CopyOrExpand": { 
+        "prefix": "CopyOrExpand",
+        "body": [
+            "CopyOrExpand,${1:<SrcFile>},${2:<DestPath>}",
+            "$0"
+        ],
+        "description": "CopyOrExpand,<SrcFile>,<DestPath>,[PRESERVE],[NOWARN] "
+    },
+    "WebGet": { 
+        "prefix": "WebGet",
+        "body": [
+            "WebGet,${1:<URL>},${2:<DestPath>}",
+            "$0"
+        ],
+        "description": "WebGet,<URL>,<DestPath>,[Hash=HashType,HashDigest],[NOERR] "
+    },
+    "ExtractFile": { 
+        "prefix": "ExtractFile",
+        "body": [
+            "ExtractFile,${1:<ScriptFile>},${2:<DirName>},${3:<FileName>},${4:<DestDir>}",
+            "$0"
+        ],
+        "description": "ExtractFile,<ScriptFile>,<DirName>,<FileName>,<DestDir> "
+    },
+    "ExtractAndRun": { 
+        "prefix": "ExtractAndRun",
+        "body": [
+            "ExtractAndRun,${1:<ScriptFile>},${2:<DirName>},${3:<FileName>}",
+            "$0"
+        ],
+        "description": "ExtractAndRun,<ScriptFile>,<DirName>,<FileName>,[Params] "
+    },
+    "ExtractAllFiles": { 
+        "prefix": "ExtractAllFiles",
+        "body": [
+            "ExtractAllFiles,${1:<ScriptFile>},${2:<DirName>},${3:<DestDir>}",
+            "$0"
+        ],
+        "description": "ExtractAllFiles,<ScriptFile>,<DirName>,<DestDir> "
+    },
+    "Encode": { 
+        "prefix": "Encode",
+        "body": [
+            "Encode,${1:<ScriptFile>},${2:<DirName>},${3:<FileName>}",
+            "$0"
+        ],
+        "description": "Encode,<ScriptFile>,<DirName>,<FileName>,[Compression] "
+    },
+    "Visible": { 
+        "prefix": "Visible",
+        "body": [
+            "Visible,${1:<%UIControlKey%>},${2:<Visibility>}",
+            "$0"
+        ],
+        "description": "Visible,<%UIControlKey%>,<Visibility> "
+    },
+    "ReadInterface": { 
+        "prefix": "ReadInterface",
+        "body": [
+            "ReadInterface,${1:<Element>},${2:<ScriptFile>},${3:<Section>},${4:<Key>},${5:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "ReadInterface,<Element>,<ScriptFile>,<Section>,<Key>,<%DestVar%> "
+    },
+    "WriteInterface": { 
+        "prefix": "WriteInterface",
+        "body": [
+            "WriteInterface,${1:<Element>},${2:<ScriptFile>},${3:<Section>},${4:<Key>},${5:<Value>}",
+            "$0"
+        ],
+        "description": "WriteInterface,<Element>,<ScriptFile>,<Section>,<Key>,<Value> "
+    },
+    "Message": { 
+        "prefix": "Message",
+        "body": [
+            "Message,${1:<Message>},${2:[Icon]}",
+            "$0"
+        ],
+        "description": "Message,<Message>,[Icon],[TIMEOUT] "
+    },
+    "Echo": { 
+        "prefix": "Echo",
+        "body": [
+            "Echo,${1:<Message>}",
+            "$0"
+        ],
+        "description": "Message,<Message>,[WARN] "
+    },
+    "EchoFile": { 
+        "prefix": "EchoFile",
+        "body": [
+            "EchoFile,${1:<SrcFile>}",
+            "$0"
+        ],
+        "description": "EchoFile,<SrcFile>,[WARN],[ENCODE] "
+    },
+    "UserInput,File": { 
+        "prefix": "UserInput,File",
+        "body": [
+            "UserInput,File,${1:<InitPath>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "UserInput,File,<InitPath>,<%DestVar%> "
+    },
+    "UserInput,Dir": { 
+        "prefix": "UserInput,Dir",
+        "body": [
+            "UserInput,Dir,${1:<InitPath>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "UserInput,Dir,<InitPath>,<%DestVar%> "
+    },
+    "AddInterface": { 
+        "prefix": "AddInterface",
+        "body": [
+            "AddInterface,${1:<ScriptFile>},${2:<Interface>},${3:Prefix>}",
+            "$0"
+        ],
+        "description": "AddInterface,<ScriptFile>,<Interface>,<Prefix> "
     }
 }
