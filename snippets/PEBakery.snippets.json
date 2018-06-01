@@ -60,18 +60,18 @@
     "FileSize": { 
         "prefix": "FileSize",
         "body": [
-            "FileSize,${1:<FilePath>},${2:<DestVar>}",
+            "FileSize,${1:<FilePath>},${2:<%DestVar%>}",
             "$0"
         ],
-        "description": "FileSize,<FilePath>,<DestVar> "
+        "description": "FileSize,<FilePath>,<%DestVar%> "
     },
     "FileVersion": { 
         "prefix": "FileVersion",
         "body": [
-            "FileVersion,${1:<FilePath>},${2:<DestVar>}",
+            "FileVersion,${1:<FilePath>},${2:<%DestVar%>}",
             "$0"
         ],
-        "description": "FileVersion,<FilePath>,<DestVar> "
+        "description": "FileVersion,<FilePath>,<%DestVar%> "
     },
     "DirCopy": { 
         "prefix": "DirCopy",
@@ -108,10 +108,10 @@
     "DirSize": { 
         "prefix": "DirSize",
         "body": [
-            "DirSize,${1:<DirPath>},${2:<DestVar>}",
+            "DirSize,${1:<DirPath>},${2:<%DestVar%>}",
             "$0"
         ],
-        "description": "DirSize,<DirPath>,<DestVar> "
+        "description": "DirSize,<DirPath>,<%DestVar%> "
     },
     "PathMove": { 
         "prefix": "PathMove",
@@ -140,10 +140,10 @@
     "RegRead": { 
         "prefix": "RegRead",
         "body": [
-            "RegRead,${1:<HKey>},${2:<KeyPath>},${3:<ValueName>},${4:<DestVar>}",
+            "RegRead,${1:<HKey>},${2:<KeyPath>},${3:<ValueName>},${4:<%DestVar%>}",
             "$0"
         ],
-        "description": "RegRead,<HKey>,<KeyPath>,<ValueName>,<DestVar> "
+        "description": "RegRead,<HKey>,<KeyPath>,<ValueName>,<%DestVar%> "
     },
     "RegWrite": { 
         "prefix": "RegWrite",
@@ -192,5 +192,1221 @@
             "$0"
         ],
         "description": "RegCopy,<SrcKey>,<SrcKeyPath>,<DestKey>,<DestKeyPath>,[WILDCARD] "
+    },
+    "TXTAddLine": { 
+        "prefix": "TXTAddLine",
+        "body": [
+            "TXTAddLine,${1:<FileName>},${2:<Line>},${3:<Mode>}",
+            "$0"
+        ],
+        "description": "TXTAddLine,<FileName>,<Line>,<Mode> "
+    },
+    "TXTReplace": { 
+        "prefix": "TXTReplace",
+        "body": [
+            "TXTReplace,${1:<FileName>},${2:<OldStr>},${3:<NewStr>}",
+            "$0"
+        ],
+        "description": "TXTReplace,<FileName>,<OldStr>,<NewStr> "
+    },
+    "TXTDelLine": { 
+        "prefix": "TXTDelLine",
+        "body": [
+            "RegCopy,${1:<FileName>},${2:<Str>}",
+            "$0"
+        ],
+        "description": "TXTDelLine,<FileName>,<Str> "
+    },
+    "TXTDelSpaces": { 
+        "prefix": "TXTDelSpaces",
+        "body": [
+            "TXTDelSpaces,${1:<FileName>}",
+            "$0"
+        ],
+        "description": "TXTDelSpaces,<FileName> "
+    },
+    "TXTDelEmptyLines": { 
+        "prefix": "TXTDelEmptyLines",
+        "body": [
+            "TXTDelEmptyLines,${1:<FileName>}",
+            "$0"
+        ],
+        "description": "TXTDelEmptyLines,<FileName> "
+    },
+    "IniRead": { 
+        "prefix": "IniRead",
+        "body": [
+            "IniRead,${1:<FileName>},${2:<Section>},${3:<Key>},${4:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "IniRead,<FileName>,<Section>,<Key>,<%DestVar%> "
+    },
+    "IniWrite": { 
+        "prefix": "IniWrite",
+        "body": [
+            "IniWrite,${1:<FileName>},${2:<Section>},${3:<Key>},${4:<Value>}",
+            "$0"
+        ],
+        "description": "IniWrite,<FileName>,<Section>,<Key>,<Value> "
+    },
+    "IniDelete": { 
+        "prefix": "IniDelete",
+        "body": [
+            "IniDelete,${1:<FileName>},${2:<Section>},${3:<Key>}",
+            "$0"
+        ],
+        "description": "IniDelete,<FileName>,<Section>,<Key> "
+    },
+    "IniReadSection": { 
+        "prefix": "IniReadSection",
+        "body": [
+            "IniReadSection,${1:<FileName>},${2:<Section>},${3:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "IniReadSection,<FileName>,<Section>,<%DestVar%> "
+    },
+    "IniAddSection": { 
+        "prefix": "IniAddSection",
+        "body": [
+            "IniAddSection,${1:<FileName>},${2:<Section>}",
+            "$0"
+        ],
+        "description": "IniAddSection,<FileName>,<Section> "
+    },
+    "IniDeleteSection": { 
+        "prefix": "IniDeleteSection",
+        "body": [
+            "IniDeleteSection,${1:<FileName>},${2:<Section>}",
+            "$0"
+        ],
+        "description": "IniDeleteSection,<FileName>,<Section> "
+    },
+    "IniWriteTextLine": { 
+        "prefix": "IniWriteTextLine",
+        "body": [
+            "IniWriteTextLine,${1:<FileName>},${2:<Section>},${3:<Line>}",
+            "$0"
+        ],
+        "description": "IniWriteTextLine,<FileName>,<Section>,<Line>,[APPEND] "
+    },
+    "IniMerge": { 
+        "prefix": "IniMerge",
+        "body": [
+            "IniMerge,${1:<SrcFile>},${2:<DestFile>}",
+            "$0"
+        ],
+        "description": "IniMerge,<SrcFile>,<DestFile> "
+    },
+    "Compress": { 
+        "prefix": "Compress",
+        "body": [
+            "Compress,${1:<Format>},${2:<SrcPath>},${3:<DestArchive>}",
+            "$0"
+        ],
+        "description": "Compress,<Format>,<SrcPath>,<DestArchive>,[CompressLevel],[Encoding] "
+    },
+    "Decompress": { 
+        "prefix": "Decompress",
+        "body": [
+            "Decompress,${1:<SrcArchive>},${2:<DestDir>}",
+            "$0"
+        ],
+        "description": "Decompress,<SrcArchive>,<DestDir>,[Encoding] "
+    },
+    "Expand": { 
+        "prefix": "Expand",
+        "body": [
+            "Expand,${1:<SrcCab>},${2:<DestDir>}",
+            "$0"
+        ],
+        "description": "Expand,<SrcCab>,<DestDir>,[SingleFile],[PRESERVE],[NOWARN] "
+    },
+    "CopyOrExpand": { 
+        "prefix": "CopyOrExpand",
+        "body": [
+            "CopyOrExpand,${1:<SrcFile>},${2:<DestPath>}",
+            "$0"
+        ],
+        "description": "CopyOrExpand,<SrcFile>,<DestPath>,[PRESERVE],[NOWARN] "
+    },
+    "WebGet": { 
+        "prefix": "WebGet",
+        "body": [
+            "WebGet,${1:<URL>},${2:<DestPath>}",
+            "$0"
+        ],
+        "description": "WebGet,<URL>,<DestPath>,[Hash=HashType,HashDigest],[NOERR] "
+    },
+    "ExtractFile": { 
+        "prefix": "ExtractFile",
+        "body": [
+            "ExtractFile,${1:<ScriptFile>},${2:<DirName>},${3:<FileName>},${4:<DestDir>}",
+            "$0"
+        ],
+        "description": "ExtractFile,<ScriptFile>,<DirName>,<FileName>,<DestDir> "
+    },
+    "ExtractAndRun": { 
+        "prefix": "ExtractAndRun",
+        "body": [
+            "ExtractAndRun,${1:<ScriptFile>},${2:<DirName>},${3:<FileName>}",
+            "$0"
+        ],
+        "description": "ExtractAndRun,<ScriptFile>,<DirName>,<FileName>,[Params] "
+    },
+    "ExtractAllFiles": { 
+        "prefix": "ExtractAllFiles",
+        "body": [
+            "ExtractAllFiles,${1:<ScriptFile>},${2:<DirName>},${3:<DestDir>}",
+            "$0"
+        ],
+        "description": "ExtractAllFiles,<ScriptFile>,<DirName>,<DestDir> "
+    },
+    "Encode": { 
+        "prefix": "Encode",
+        "body": [
+            "Encode,${1:<ScriptFile>},${2:<DirName>},${3:<FileName>}",
+            "$0"
+        ],
+        "description": "Encode,<ScriptFile>,<DirName>,<FileName>,[Compression] "
+    },
+    "Visible": { 
+        "prefix": "Visible",
+        "body": [
+            "Visible,${1:<%UIControlKey%>},${2:<Visibility>}",
+            "$0"
+        ],
+        "description": "Visible,<%UIControlKey%>,<Visibility> "
+    },
+    "ReadInterface": { 
+        "prefix": "ReadInterface",
+        "body": [
+            "ReadInterface,${1:<Element>},${2:<ScriptFile>},${3:<Section>},${4:<Key>},${5:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "ReadInterface,<Element>,<ScriptFile>,<Section>,<Key>,<%DestVar%> "
+    },
+    "WriteInterface": { 
+        "prefix": "WriteInterface",
+        "body": [
+            "WriteInterface,${1:<Element>},${2:<ScriptFile>},${3:<Section>},${4:<Key>},${5:<Value>}",
+            "$0"
+        ],
+        "description": "WriteInterface,<Element>,<ScriptFile>,<Section>,<Key>,<Value> "
+    },
+    "Message": { 
+        "prefix": "Message",
+        "body": [
+            "Message,${1:<Message>},${2:[Icon]}",
+            "$0"
+        ],
+        "description": "Message,<Message>,[Icon],[TIMEOUT] "
+    },
+    "Echo": { 
+        "prefix": "Echo",
+        "body": [
+            "Echo,${1:<Message>}",
+            "$0"
+        ],
+        "description": "Message,<Message>,[WARN] "
+    },
+    "EchoFile": { 
+        "prefix": "EchoFile",
+        "body": [
+            "EchoFile,${1:<SrcFile>}",
+            "$0"
+        ],
+        "description": "EchoFile,<SrcFile>,[WARN],[ENCODE] "
+    },
+    "UserInput,File": { 
+        "prefix": "UserInput,File",
+        "body": [
+            "UserInput,File,${1:<InitPath>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "UserInput,File,<InitPath>,<%DestVar%> "
+    },
+    "UserInput,Dir": { 
+        "prefix": "UserInput,Dir",
+        "body": [
+            "UserInput,Dir,${1:<InitPath>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "UserInput,Dir,<InitPath>,<%DestVar%> "
+    },
+    "AddInterface": { 
+        "prefix": "AddInterface",
+        "body": [
+            "AddInterface,${1:<ScriptFile>},${2:<Interface>},${3:Prefix>}",
+            "$0"
+        ],
+        "description": "AddInterface,<ScriptFile>,<Interface>,<Prefix> "
+    },
+    "Hash": { 
+        "prefix": "Hash",
+        "body": [
+            "Hash,${1:<HashType>},${2:<FilePath>},${3:DestVar>}",
+            "$0"
+        ],
+        "description": "Hash,<HashType>,<FilePath>,<%DestVar%> "
+    },
+    "StrFormat,IntToBytes": { 
+        "prefix": "StrFormat,IntToBytes",
+        "body": [
+            "StrFormat,IntToBytes,${1:<Integer>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,IntToBytes,<Integer>,<%DestVar%> "
+    },
+    "StrFormat,BytesToInt": { 
+        "prefix": "StrFormat,BytesToInt",
+        "body": [
+            "StrFormat,BytesToInt,${1:<Bytes>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,BytesToInt,<Bytes>,<%DestVar%> "
+    },
+    "StrFormat,Hex": { 
+        "prefix": "StrFormat,Hex",
+        "body": [
+            "StrFormat,Hex,${1:<Integer>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,Hex,<Integer>,<%DestVar%> "
+    },
+    "StrFormat,Ceil": { 
+        "prefix": "StrFormat,Ceil",
+        "body": [
+            "StrFormat,Ceil,${1:<%Integer%>},${2:<CeilTo>}",
+            "$0"
+        ],
+        "description": "StrFormat,Ceil,<%Integer%>,<CeilTo> "
+    },
+    "StrFormat,Floor": { 
+        "prefix": "StrFormat,Floor",
+        "body": [
+            "StrFormat,Floor,${1:<%Integer%>},${2:<FloorTo>}",
+            "$0"
+        ],
+        "description": "StrFormat,Floor,<%Integer%>,<FloorTo> "
+    },
+    "StrFormat,Round": { 
+        "prefix": "StrFormat,Round",
+        "body": [
+            "StrFormat,Round,${1:<%Integer%>},${2:<RoundTo>}",
+            "$0"
+        ],
+        "description": "StrFormat,Round,<%Integer%>,<RoundTo> "
+    },
+    "StrFormat,Dates": { 
+        "prefix": "StrFormat,Date",
+        "body": [
+            "StrFormat,Date,${1:<%DestVar%>},${2:<FormatString>}",
+            "$0"
+        ],
+        "description": "StrFormat,Date,<%DestVar%>,<FormatString> "
+    },
+    "StrFormat,FileName": { 
+        "prefix": "StrFormat,FileName",
+        "body": [
+            "StrFormat,FileName,${1:<FilePath>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,FileName,<FilePath>,<%DestVar%> "
+    },
+    "StrFormat,DirPath": { 
+        "prefix": "StrFormat,DirPath",
+        "body": [
+            "StrFormat,DirPath,${1:<FilePath>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,DirPath,<FilePath>,<%DestVar%> "
+    },
+    "StrFormat,Ext": { 
+        "prefix": "StrFormat,Ext",
+        "body": [
+            "StrFormat,Ext,${1:<FilePath>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,Ext,<FilePath>,<%DestVar%> "
+    },
+    "StrFormat,PathCombine": { 
+        "prefix": "StrFormat,PathCombine",
+        "body": [
+            "StrFormat,PathCombine,${1:<DirPath>},${2:<FileName>},${3:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,PathCombine,<DirPath>,<FileName>,<%DestVar%> "
+    },
+    "StrFormat,Inc": { 
+        "prefix": "StrFormat,Inc",
+        "body": [
+            "StrFormat,Inc,${1:<%DestVar%>},${2:<Integer>}",
+            "$0"
+        ],
+        "description": "StrFormat,Inc,<%DestVar%>,<Integer> "
+    },
+    "StrFormat,Dec": { 
+        "prefix": "StrFormat,Dec",
+        "body": [
+            "StrFormat,Dec,${1:<%DestVar%>},${2:<Integer>}",
+            "$0"
+        ],
+        "description": "StrFormat,Dec,<%DestVar%>,<Integer> "
+    },
+    "StrFormat,Mult": { 
+        "prefix": "StrFormat,Mult",
+        "body": [
+            "StrFormat,Mult,${1:<%DestVar%>},${2:<Integer>}",
+            "$0"
+        ],
+        "description": "StrFormat,Mult,<%DestVar%>,<Integer> "
+    },
+    "StrFormat,Div": { 
+        "prefix": "StrFormat,Div",
+        "body": [
+            "StrFormat,Div,${1:<%DestVar%>},${2:<Integer>}",
+            "$0"
+        ],
+        "description": "StrFormat,Div,<%DestVar%>,<Integer> "
+    },
+    "StrFormat,Left": { 
+        "prefix": "StrFormat,Left",
+        "body": [
+            "StrFormat,Left,${1:<SrcStr>},${2:<Count>},${3:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,Left,<SrcStr>,<Count>,<%DestVar%> "
+    },
+    "StrFormat,Right": { 
+        "prefix": "StrFormat,Right",
+        "body": [
+            "StrFormat,Right,${1:<SrcStr>},${2:<Count>},${3:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,Right,<SrcStr>,<Count>,<%DestVar%> "
+    },
+    "StrFormat,SubStr": { 
+        "prefix": "StrFormat,SubStr",
+        "body": [
+            "StrFormat,SubStr,${1:<SrcStr>},${2:<StartPos>},${3:<Length>},${4:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,SubStr,<SrcStr>,<StartPos>,<Length>,<%DestVar%> "
+    },
+    "StrFormat,Len": { 
+        "prefix": "StrFormat,Len",
+        "body": [
+            "StrFormat,Len,${1:<SrcStr>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,Len,<SrcStr>,<%DestVar%> "
+    },
+    "StrFormat,LTrim": { 
+        "prefix": "StrFormat,LTrim",
+        "body": [
+            "StrFormat,LTrim,${1:<SrcStr>},${2:<Integer>},${3:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,LTrim,<SrcStr>,<Integer>,<%DestVar%> "
+    },
+    "StrFormat,RTrim": { 
+        "prefix": "StrFormat,RTrim",
+        "body": [
+            "StrFormat,RTrim,${1:<SrcStr>},${2:<Integer>},${3:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,RTrim,<SrcStr>,<Integer>,<%DestVar%> "
+    },
+    "StrFormat,CTrim": { 
+        "prefix": "StrFormat,CTrim",
+        "body": [
+            "StrFormat,CTrim,${1:<SrcStr>},${2:<Integer>},${3:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,CTrim,<SrcStr>,<Integer>,<%DestVar%> "
+    },
+    "StrFormat,NTrim": { 
+        "prefix": "StrFormat,NTrim",
+        "body": [
+            "StrFormat,NTrim,${1:<SrcStr>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,NTrim,<SrcStr>,<%DestVar%> "
+    },
+    "StrFormat,UCase": { 
+        "prefix": "StrFormat,UCase",
+        "body": [
+            "StrFormat,UCase,${1:<SrcStr>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,UCase,<SrcStr>,<%DestVar%> "
+    },
+    "StrFormat,LCase": { 
+        "prefix": "StrFormat,LCase",
+        "body": [
+            "StrFormat,LCase,${1:<SrcStr>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,LCase,<SrcStr>,<%DestVar%> "
+    },
+    "StrFormat,Pos": { 
+        "prefix": "StrFormat,Pos",
+        "body": [
+            "StrFormat,Pos,${1:<SrcStr>},${2:<SubStr>},${3:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,Pos,<SrcStr>,<SubStr>,<%DestVar%> "
+    },
+    "StrFormat,PosX": { 
+        "prefix": "StrFormat,PosX",
+        "body": [
+            "StrFormat,PosX,${1:<SrcStr>},${2:<SubStr>},${3:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,PosX,<SrcStr>,<SubStr>,<%DestVar%> "
+    },
+    "StrFormat,Replace": { 
+        "prefix": "StrFormat,Replace",
+        "body": [
+            "StrFormat,Replace,${1:<SrcStr>},${2:<SearchStr>},${3:<ReplaceStr>},${4:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,Replace,<SrcStr>,<SearchStr>,<ReplaceStr>,<%DestVar%> "
+    },
+    "StrFormat,ReplaceX": { 
+        "prefix": "StrFormat,ReplaceX",
+        "body": [
+            "StrFormat,ReplaceX,${1:<SrcStr>},${2:<SearchStr>},${3:<ReplaceStr>},${4:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,ReplaceX,<SrcStr>,<SearchStr>,<ReplaceStr>,<%DestVar%> "
+    },
+    "StrFormat,Split": { 
+        "prefix": "StrFormat,Split",
+        "body": [
+            "StrFormat,Split,${1:<SrcStr>},${2:<Delimiter>},${3:<Index>},${4:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,Split,<SrcStr>,<Delimiter>,<Index>,<%DestVar%> "
+    },
+    "Math,Add": { 
+        "prefix": "Math,Add",
+        "body": [
+            "Math,Add,${1:<%DestVar%>},${2:<Src1>},${3:<Src2>}",
+            "$0"
+        ],
+        "description": "Math,Add,<%DestVar%>,<Src1>,<Src2> "
+    },
+    "Math,Sub": { 
+        "prefix": "Math,Sub",
+        "body": [
+            "Math,Sub,${1:<%DestVar%>},${2:<Src1>},${3:<Src2>}",
+            "$0"
+        ],
+        "description": "Math,Sub,<%DestVar%>,<Src1>,<Src2> "
+    },
+    "Math,Mul": { 
+        "prefix": "Math,Mul",
+        "body": [
+            "Math,Mul,${1:<%DestVar%>},${2:<Src1>},${3:<Src2>}",
+            "$0"
+        ],
+        "description": "Math,Mul,<%DestVar%>,<Src1>,<Src2> "
+    },
+    "Math,Div": { 
+        "prefix": "Math,Div",
+        "body": [
+            "Math,Div,${1:<%DestVar%>},${2:<Src1>},${3:<Src2>}",
+            "$0"
+        ],
+        "description": "Math,Div,<%DestVar%>,<Src1>,<Src2> "
+    },
+    "Math,IntDiv": { 
+        "prefix": "Math,IntDiv",
+        "body": [
+            "Math,IntDiv,${1:<%QuotientVar%>},${2:<%RemainderVar%>},${3:<Src1>},${4:<Src2>}",
+            "$0"
+        ],
+        "description": "Math,IntDiv,<%QuotientVar%>,<%RemainderVar%>,<Src1>,<Src2> "
+    },
+    "Math,Neg": { 
+        "prefix": "Math,Neg",
+        "body": [
+            "Math,Neg,${1:<%DestVar%>},${2:<Src>}",
+            "$0"
+        ],
+        "description": "Math,Neg,<%DestVar%>,<Src> "
+    },
+    "Math,ToSign": { 
+        "prefix": "Math,ToSign",
+        "body": [
+            "Math,ToSign,${1:<%DestVar%>},${2:<Src>},${3:[BitSize]}",
+            "$0"
+        ],
+        "description": "Math,ToSign,<%DestVar%>,<Src>,[BitSize] "
+    },
+    "Math,ToUnsign": { 
+        "prefix": "Math,ToUnsign",
+        "body": [
+            "Math,ToUnsign,${1:<%DestVar%>},${2:<Src>},${3:[BitSize]}",
+            "$0"
+        ],
+        "description": "Math,ToUnsign,<%DestVar%>,<Src>,[BitSize] "
+    },
+    "Math,BoolAnd": { 
+        "prefix": "Math,BoolAnd",
+        "body": [
+            "Math,BoolAnd,${1:<%DestVar%>},${2:<Src1>},${3:<Src2>}",
+            "$0"
+        ],
+        "description": "Math,BoolAnd,<%DestVar%>,<Src1>,<Src2> "
+    },
+    "Math,BoolOr": { 
+        "prefix": "Math,BoolOr",
+        "body": [
+            "Math,BoolOr,${1:<%DestVar%>},${2:<Src1>},${3:<Src2>}",
+            "$0"
+        ],
+        "description": "Math,BoolOr,<%DestVar%>,<Src1>,<Src2> "
+    },
+    "Math,BoolXor": { 
+        "prefix": "Math,BoolXor",
+        "body": [
+            "Math,BoolXor,${1:<%DestVar%>},${2:<Src1>},${3:<Src2>}",
+            "$0"
+        ],
+        "description": "Math,BoolXor,<%DestVar%>,<Src1>,<Src2> "
+    },
+    "Math,BoolNot": { 
+        "prefix": "Math,BoolNot",
+        "body": [
+            "Math,BoolNot,${1:<%DestVar%>},${2:<Src>}",
+            "$0"
+        ],
+        "description": "Math,BoolXor,<%DestVar%>,<Src> "
+    },
+    "Math,BitAnd": { 
+        "prefix": "Math,BitAnd",
+        "body": [
+            "Math,BitAnd,${1:<%DestVar%>},${2:<Src1>},${3:<Src2>}",
+            "$0"
+        ],
+        "description": "Math,BitAnd,<%DestVar%>,<Src1>,<Src2> "
+    },
+    "Math,BitOr": { 
+        "prefix": "Math,BitOr",
+        "body": [
+            "Math,BitOr,${1:<%DestVar%>},${2:<Src1>},${3:<Src2>}",
+            "$0"
+        ],
+        "description": "Math,BitOr,<%DestVar%>,<Src1>,<Src2> "
+    },
+    "Math,BitXor": { 
+        "prefix": "Math,BitXor",
+        "body": [
+            "Math,BitXor,${1:<%DestVar%>},${2:<Src1>},${3:<Src2>}",
+            "$0"
+        ],
+        "description": "Math,BoolXor,<%DestVar%>,<Src1>,<Src2> "
+    },
+    "Math,BitNot": { 
+        "prefix": "Math,BitNot",
+        "body": [
+            "Math,BitNot,${1:<%DestVar%>},${2:<Src>},${3:[BitSize]}",
+            "$0"
+        ],
+        "description": "Math,BitNot,<%DestVar%>,<Src>,[BitSize] "
+    },
+    "Math,BitShift": { 
+        "prefix": "Math,BitShift",
+        "body": [
+            "Math,BitShift,${1:<%DestVar%>},${2:<Src>},${3:<Direction>},${4:<Shift>},${5:[BitSize]}",
+            "$0"
+        ],
+        "description": "<%DestVar%>,<Src>,<Direction>,<Shift>,[BitSize],[UNSIGNED] "
+    },
+    "Math,Ceil": { 
+        "prefix": "Math,Ceil",
+        "body": [
+            "Math,Ceil,${1:<%DestVar%>},${2:<Src>},${3:<Unit>}",
+            "$0"
+        ],
+        "description": "Math,Ceil,<%DestVar%>,<Src>,<Unit> "
+    },
+    "Math,Floor": { 
+        "prefix": "Math,Floor",
+        "body": [
+            "Math,Floor,${1:<%DestVar%>},${2:<Src>},${3:<Unit>}",
+            "$0"
+        ],
+        "description": "Math,Floor,<%DestVar%>,<Src>,<Unit> "
+    },
+    "Math,Round": { 
+        "prefix": "Math,Round",
+        "body": [
+            "Math,Round,${1:<%DestVar%>},${2:<Src>},${3:<Unit>}",
+            "$0"
+        ],
+        "description": "Math,Round,<%DestVar%>,<Src>,<Unit> "
+    },
+    "Math,Abs": { 
+        "prefix": "Math,Abs",
+        "body": [
+            "Math,Abs,${1:<%DestVar%>},${2:<Src>}",
+            "$0"
+        ],
+        "description": "Math,Abs,<%DestVar%>,<Src> "
+    },
+    "Math,Pow": { 
+        "prefix": "Math,Pow",
+        "body": [
+            "Math,Pow,${1:<%DestVar%>},${2:<Base>},${3:<PowerOf>}",
+            "$0"
+        ],
+        "description": "Math,Pow,<%DestVar%>,<Base>,<PowerOf> "
+    },
+    "Math,Hex": { 
+        "prefix": "Math,Hex",
+        "body": [
+            "Math,Hex,${1:<%DestVar%>},${2:<Src>},${3:[BitSize]}",
+            "$0"
+        ],
+        "description": "Math,Hex,<%DestVar%>,<Src>,[BitSize] "
+    },
+    "WimMount": { 
+        "prefix": "WimMount",
+        "body": [
+            "WimMount,${1:<SrcWim>},${2:<ImageIndex>},${3:<MountDir>},${4:<MountOption>}",
+            "$0"
+        ],
+        "description": "WimMount,<SrcWim>,<ImageIndex>,<MountDir>,<MountOption> "
+    },
+    "WimUnmount": { 
+        "prefix": "WimUnmount",
+        "body": [
+            "WimUnmount,${1:<MountDir>},${2:<UnmountOption>}",
+            "$0"
+        ],
+        "description": "WimUnmount,<MountDir>,<UnmountOption> "
+    },
+    "WimInfo": { 
+        "prefix": "WimInfo",
+        "body": [
+            "WimInfo,${1:<SrcWim>},${2:<ImageIndex>},${3:<Key>},${4:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "WimInfo,<SrcWim>,<ImageIndex>,<Key>,<%DestVar%>,[NOERR] "
+    },
+    "WimApply": { 
+        "prefix": "WimApply",
+        "body": [
+            "WimApply,${1:<SrcWim>},${2:<ImageIndex>},${3:<DestDir>}",
+            "$0"
+        ],
+        "description": "WimApply,<SrcWim>,<ImageIndex>,<DestDir>,[Split=<Str>],[CHECK],[NOACL],[NOATTRIB] "
+    },
+    "WimExtract": { 
+        "prefix": "WimExtract",
+        "body": [
+            "WimExtract,${1:<SrcWim>},${2:<ImageIndex>},${3:<ExtractPath>},${4:<DestDir>}",
+            "$0"
+        ],
+        "description": "WimExtract,<SrcWim>,<ImageIndex>,<ExtractPath>,<DestDir>,[Split=<Str>],[CHECK],[NOACL],[NOATTRIB] "
+    },
+    "WimExtractBulk": { 
+        "prefix": "WimExtractBulk",
+        "body": [
+            "WimExtractBulk,${1:<SrcWim>},${2:<ImageIndex>},${3:<ListFile>},${3:<DestDir>}",
+            "$0"
+        ],
+        "description": "WimExtractBulk,<SrcWim>,<ImageIndex>,<ListFile>,<DestDir>,[Split=<Str>],[CHECK],[NOACL],[NOATTRIB],[NOERR],[NOWARN] "
+    },
+    "WimCapture": { 
+        "prefix": "WimCapture",
+        "body": [
+            "WimCapture,${1:<SrcWim>},${2:<DestWim>},${3:<Compress>},${4:[ImageName=<Str>],${5:[ImageDesc=<Str>]",
+            "$0"
+        ],
+        "description": "WimCapture,<SrcDir>,<DestWim>,<Compress>,[ImageName=<Str>],[ImageDesc=<Str>],[Flags=<Str>],[BOOT],[CHECK],[NOACL] "
+    },
+    "WimAppend": { 
+        "prefix": "WimAppend",
+        "body": [
+            "WimAppend,${1:<SrcDir>},${2:<DestWim>},${3:[ImageName=<Str>},${4:[ImageDesc=<Str>]",
+            "$0"
+        ],
+        "description": "WimAppend,<SrcDir>,<DestWim>,[ImageName=<Str>],[ImageDesc=<Str>],[Flags=<Str>],[DeltaIndex=INT],[BOOT],[CHECK],[NOACL] "
+    },
+    "WimDelete": { 
+        "prefix": "WimDelete",
+        "body": [
+            "WimDelete,${1:<SrcWim>},${2:<ImageIndex>}",
+            "$0"
+        ],
+        "description": "WimDelete,<SrcWim>,<ImageIndex>,[CHECK] "
+    },
+    "WimPathAdd": { 
+        "prefix": "WimPathAdd",
+        "body": [
+            "WimPathAdd,${1:<WimFile>},${2:<ImageIndex>},${3:<SrcPath>},${4:<DestPath>}",
+            "$0"
+        ],
+        "description": "WimPathAdd,<WimFile>,<ImageIndex>,<SrcPath>,<DestPath>,[CHECK],[NOACL],[PRESERVE],[REBUILD] "
+    },
+    "WimPathDelete": { 
+        "prefix": "WimPathDelete",
+        "body": [
+            "WimPathDelete,${1:<WimFile>},${2:<ImageIndex>},${3:<Path>}",
+            "$0"
+        ],
+        "description": "WimPathDelete,<WimFile>,<ImageIndex>,<Path>,[CHECK],[REBUILD] "
+    },
+    "WimPathRename": { 
+        "prefix": "WimPathRename",
+        "body": [
+            "WimPathRename,${1:<WimFile>},${2:<ImageIndex>},${3:<SrcPath>},${4:<DestPath>}",
+            "$0"
+        ],
+        "description": "WimPathRename,<WimFile>,<ImageIndex>,<SrcPath>,<DestPath>,[CHECK],[REBUILD] "
+    },
+    "WimOptimize": { 
+        "prefix": "WimOptimize",
+        "body": [
+            "WimOptimize,${1:<WimFile>}",
+            "$0"
+        ],
+        "description": "WimOptimize,<WimFile>,[Recomp=<Str>],[CHECK|NOCHECK] "
+    },
+    "WimExport": { 
+        "prefix": "WimExport",
+        "body": [
+            "WimExport,${1:<SrcWim>},${2:<ImageIndex>},${3:<DestWim>},${4:[ImageName=<Str>},${5:[ImageDesc=<Str>]",
+            "$0"
+        ],
+        "description": "WimExport,<SrcWim>,<ImageIndex>,<DestWim>,[ImageName=<Str>],[ImageDesc=<Str>],[Split=<Str>],[Recomp=<Str>],[BOOT],[CHECK|NOCHECK] "
+    },
+    "Run": { 
+        "prefix": "Run",
+        "body": [
+            "Run,${1:<ScriptFile>},${2:<Section>}",
+            "$0"
+        ],
+        "description": "Run,<ScriptFile>,<Section>,[Params] "
+    },
+    "Exec": { 
+        "prefix": "Exec",
+        "body": [
+            "Exec,${1:<ScriptFile>},${2:<Section>}",
+            "$0"
+        ],
+        "description": "Exec,<ScriptFile>,<Section>,[Params] "
+    },
+    "Loop (Start)": { 
+        "prefix": "Loop",
+        "body": [
+            "Loop,${1:<ScriptFile>},${2:<Section>},${3:<StartIndex>},${4:<EndIndex>}",
+            "$0"
+        ],
+        "description": "Loop,<ScriptFile>,<Section>,<StartIndex>,<EndIndex>[,Params] "
+    },
+    "Loop (Break)": { 
+        "prefix": "Loop",
+        "body": [
+            "Loop,BREAK",
+            "$0"
+        ],
+        "description": "Loop,BREAK "
+    },
+    "LoopLetter (Start)": { 
+        "prefix": "LoopLetter",
+        "body": [
+            "LoopLetter,${1:<ScriptFile>},${2:<Section>},${3:<StartLetter>},${4:<EndLetter>}",
+            "$0"
+        ],
+        "description": "LoopLetter,<ScriptFile>,<Section>,<StartLetter>,<EndLetter>[,Params] "
+    },
+    "LoopLetter (Break)": { 
+        "prefix": "LoopLetter",
+        "body": [
+            "Loop,BREAK",
+            "$0"
+        ],
+        "description": "Loop,BREAK "
+    },
+    "If,Equal": { 
+        "prefix": "If,Equal",
+        "body": [
+            "If,${1:<%Var%>},Equal,${2:<Value>},${3:<Command>}",
+            "$0"
+        ],
+        "description": "If,<%Var%>,Equal,<Value>,<Command> "
+    },
+    "If,Smaller": { 
+        "prefix": "If,Smaller",
+        "body": [
+            "If,${1:<%Var%>},Smaller,${2:<Value>},${3:<Command>}",
+            "$0"
+        ],
+        "description": "If,<%Var%>,Smaller,<Value>,<Command> "
+    },
+    "If,Bigger": { 
+        "prefix": "If,Bigger",
+        "body": [
+            "If,${1:<%Var%>},Bigger,${2:<Value>},${3:<Command>}",
+            "$0"
+        ],
+        "description": "If,<%Var%>,Bigger,<Value>,<Command> "
+    },
+    "If,SmallerEqual": { 
+        "prefix": "If,SmallerEqual",
+        "body": [
+            "If,${1:<%Var%>},SmallerEqual,${2:<Value>},${3:<Command>}",
+            "$0"
+        ],
+        "description": "If,<%Var%>,SmallerEqual,<Value>,<Command> "
+    },
+    "If,BiggerEqual": { 
+        "prefix": "If,BiggerEqual",
+        "body": [
+            "If,${1:<%Var%>},BiggerEqual,${2:<Value>},${3:<Command>}",
+            "$0"
+        ],
+        "description": "If,<%Var%>,BiggerEqual,<Value>,<Command> "
+    },
+    "If,EqualX": { 
+        "prefix": "If,EqualX",
+        "body": [
+            "If,${1:<%Var%>},EqualX,${2:<Value>},${3:<Command>}",
+            "$0"
+        ],
+        "description": "If,<%Var%>,EqualX,<Value>,<Command> "
+    },
+    "If,ExistFile": { 
+        "prefix": "If,ExistFile",
+        "body": [
+            "If,ExistFile,${1:<FilePath>},${2:<Command>}",
+            "$0"
+        ],
+        "description": "If,ExistFile,<FilePath>,<Command> "
+    },
+    "If,ExistDir": { 
+        "prefix": "If,ExistDir",
+        "body": [
+            "If,ExistDir,${1:<DirPath>},${2:<Command>}",
+            "$0"
+        ],
+        "description": "If,ExistDir,<DirPath>,<Command> "
+    },
+    "If,ExistSection": { 
+        "prefix": "If,ExistSection",
+        "body": [
+            "If,ExistSection,${1:<IniFile>},${2:<Section>},${3:<Command>}",
+            "$0"
+        ],
+        "description": "If,ExistSection,<IniFile>,<Section>,<Command> "
+    },
+    "If,ExistRegSubKey": { 
+        "prefix": "If,ExistRegSubKey",
+        "body": [
+            "If,ExistRegSubKey,${1:<RootKey>},${2:<SubKey>},${3:<Command>}",
+            "$0"
+        ],
+        "description": "If,ExistRegSubKey,<RootKey>,<SubKey>,<Command> "
+    },
+    "If,ExistRegValue": { 
+        "prefix": "If,ExistRegValue",
+        "body": [
+            "If,ExistRegValue,${1:<RootKey>},${2:<SubKey>},${3:<ValueName>},${4:<Command>}",
+            "$0"
+        ],
+        "description": "If,ExistRegValue,<RootKey>,<SubKey>,<ValueName>,<Command> "
+    },
+    "If,ExistRegMulti": { 
+        "prefix": "If,ExistRegMulti",
+        "body": [
+            "If,ExistRegMulti,${1:<RootKey>},${2:<SubKey>},${3:<ValueName>},${4:<SearchStr>},${5:<Command>}",
+            "$0"
+        ],
+        "description": "If,ExistRegMulti,<RootKey>,<SubKey>,<ValueName>,<SearchStr>,<Command> "
+    },
+    "If,ExistVar": { 
+        "prefix": "If,ExistVar",
+        "body": [
+            "If,ExistVar,${1:<%Var%>},${2:<Command>}",
+            "$0"
+        ],
+        "description": "If,ExistVar,<%Var%>,<Command> "
+    },
+    "If,ExistMacro": { 
+        "prefix": "If,ExistMacro",
+        "body": [
+            "If,ExistMacro,${1:<MacroName>},${2:<Command>}",
+            "$0"
+        ],
+        "description": "If,ExistMacro,<MacroName>,<Command> "
+    },
+    "If,WimExistIndex": { 
+        "prefix": "If,WimExistIndex",
+        "body": [
+            "If,WimExistIndex,${1:<WimFile>},${2:<ImageIndex>},${3:<Command>}",
+            "$0"
+        ],
+        "description": "If,WimExistIndex,<WimFile>,<ImageIndex>,<Command> "
+    },
+    "If,WimExistFile": { 
+        "prefix": "If,WimExistFile",
+        "body": [
+            "If,WimExistFile,${1:<WimFile>},${2:<ImageIndex>},${3:<FilePath>},${4:<Command>}",
+            "$0"
+        ],
+        "description": "If,WimExistFile,<WimFile>,<ImageIndex>,<FilePath>,<Command> "
+    },
+    "If,WimExistDir": { 
+        "prefix": "If,WimExistDir",
+        "body": [
+            "If,WimExistDir,${1:<WimFile>},${2:<ImageIndex>},${3:<DirPath>},${4:<Command>}",
+            "$0"
+        ],
+        "description": "If,WimExistDir,<WimFile>,<ImageIndex>,<DirPath>,<Command> "
+    },
+    "If,WimExistImageInfo": { 
+        "prefix": "If,WimExistImageInfo",
+        "body": [
+            "If,WimExistImageInfo,${1:<WimFile>},${2:<ImageIndex>},${3:<Key>},${4:<Command>}",
+            "$0"
+        ],
+        "description": "If,WimExistImageInfo,<WimFile>,<ImageIndex>,<Key>,<Command> "
+    },
+    "If,Ping": { 
+        "prefix": "If,Ping",
+        "body": [
+            "If,Ping,${1:<Host>},${2:<Command>}",
+            "$0"
+        ],
+        "description": "If,Ping,<Host>,<Command> "
+    },
+    "If,Online": { 
+        "prefix": "If,Online",
+        "body": [
+            "If,Online,${1:<Command>}",
+            "$0"
+        ],
+        "description": "If,Online,<Command> "
+    },
+    "If,Question (Wait)": { 
+        "prefix": "If,Question",
+        "body": [
+            "If,Question,${1:<Message>},${2:<Command>}",
+            "$0"
+        ],
+        "description": "If,Question,<Message>,<Command> "
+    },
+    "If,Question (Timeout)": { 
+        "prefix": "If,Question",
+        "body": [
+            "If,Question,${1:<Message>},${2:<Timeout>},${3:<DefaultChoice>},${4:<Command>}",
+            "$0"
+        ],
+        "description": "If,Question,<Message>,<Timeout>,<DefaultChoice>,<Command> "
+    },
+    "Set": { 
+        "prefix": "Set",
+        "body": [
+            "Set,${1:<%Var%>},${2:<Value>}",
+            "$0"
+        ],
+        "description": "Set,<%Var%>,<Value>,[GLOBAL|PERMANENT] "
+    },
+    "SetMacro": { 
+        "prefix": "SetMacro",
+        "body": [
+            "SetMacro,${1:<MacroName>},${2:<MacroCommand>}",
+            "$0"
+        ],
+        "description": "SetMacro,<MacroName>,<MacroCommand>,[GLOBAL|PERMANENT] "
+    },
+    "AddVariables": { 
+        "prefix": "AddVariables",
+        "body": [
+            "AddVariables,${1:<ScriptFile>},${2:<Section>}",
+            "$0"
+        ],
+        "description": "AddVariables,<ScriptFile>,<Section>,[GLOBAL] "
+    },
+    "Exit": { 
+        "prefix": "Exit",
+        "body": [
+            "Exit,${1:<Message>}",
+            "$0"
+        ],
+        "description": "Exit,<Message>,[NOWARN] "
+    },
+    "Halt": { 
+        "prefix": "Halt",
+        "body": [
+            "Halt,${1:<Message>}",
+            "$0"
+        ],
+        "description": "Halt,<Message>,[NOWARN] "
+    },
+    "Wait": { 
+        "prefix": "Wait",
+        "body": [
+            "Wait,${1:<Second>}",
+            "$0"
+        ],
+        "description": "Wait,<Second> "
+    },
+    "Beep": { 
+        "prefix": "Beep",
+        "body": [
+            "Beep,${1:<Type>}",
+            "$0"
+        ],
+        "description": "Beep,<Type> "
+    },
+    "System,Cursor": { 
+        "prefix": "System,Cursor",
+        "body": [
+            "System,Cursor,${1:<State>}",
+            "$0"
+        ],
+        "description": "System,Cursor,<State> "
+    },
+    "System,ErrorOff": { 
+        "prefix": "System,ErrorOff",
+        "body": [
+            "System,ErrorOff,${1:[Lines]}",
+            "$0"
+        ],
+        "description": "System,ErrorOff,[Lines] "
+    },
+    "System,GetEnv": { 
+        "prefix": "System,GetEnv",
+        "body": [
+            "System,GetEnv,${1:<EnvVar>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "System,GetEnv,<EnvVar>,<%DestVar%> "
+    },
+    "System,GetFreeDrive": { 
+        "prefix": "System,GetFreeDrive",
+        "body": [
+            "System,GetFreeDrive,${1:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "System,GetFreeDrive,<%DestVar%> "
+    },
+    "System,GetFreeSpace": { 
+        "prefix": "System,GetFreeSpace",
+        "body": [
+            "System,GetFreeSpace,${1:<Path>},${2:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "System,GetFreeSpace,<Path>,<%DestVar%> "
+    },
+    "System,OnBuildExit": { 
+        "prefix": "System,OnBuildExit",
+        "body": [
+            "System,OnBuildExit,${1:<Command>}",
+            "$0"
+        ],
+        "description": "System,OnBuildExit,<Command> "
+    },
+    "System,OnScriptExit": { 
+        "prefix": "System,OnScriptExit",
+        "body": [
+            "System,OnScriptExit,${1:<Command>}",
+            "$0"
+        ],
+        "description": "System,OnScriptExit,<Command> "
+    },
+    "System,RebuildVars": { 
+        "prefix": "System,RebuildVars",
+        "body": [
+            "System,RebuildVars",
+            "$0"
+        ],
+        "description": "System,RebuildVars "
+    },
+    "System,RefreshInterface": { 
+        "prefix": "System,RefreshInterface",
+        "body": [
+            "System,RefreshInterface",
+            "$0"
+        ],
+        "description": "System,RefreshInterface "
+    },
+    "System,RefreshAllScripts": { 
+        "prefix": "System,RefreshAllScripts",
+        "body": [
+            "System,RefreshAllScripts",
+            "$0"
+        ],
+        "description": "System,RefreshAllScripts "
+    },
+    "System,LoadNewScript": { 
+        "prefix": "System,LoadNewScript",
+        "body": [
+            "System,LoadNewScript,${1:<SrcFilePath>},${2:<DestTreeDir>}",
+            "$0"
+        ],
+        "description": "System,LoadNewScript,<SrcFilePath>,<DestTreeDir>,[PRESERVE],[NOWARN],[NOREC] "
+    },
+    "System,RefreshScript": { 
+        "prefix": "System,RefreshScript",
+        "body": [
+            "System,RefreshScript,${1:<FilePath>}",
+            "$0"
+        ],
+        "description": "System,RefreshScript,<FilePath>,[NOREC] "
+    },
+    "System,SaveLog": { 
+        "prefix": "System,SaveLog",
+        "body": [
+            "System,SaveLog,${1:<DestPath>},${2:[LogFormat]}",
+            "$0"
+        ],
+        "description": "System,SaveLog,<DestPath>,[LogFormat] "
+    },
+    "System,SetLocal": { 
+        "prefix": "System,SetLocal",
+        "body": [
+            "System,SetLocal",
+            "$0"
+        ],
+        "description": "System,SetLocal "
+    },
+    "System,EndLocal": { 
+        "prefix": "System,EndLocal",
+        "body": [
+            "System,EndLocal",
+            "$0"
+        ],
+        "description": "System,EndLocal "
+    },
+    "System,ShellExecute": { 
+        "prefix": "System,ShellExecute",
+        "body": [
+            "System,ShellExecute,${1:<Action>},${2:<FilePath>}",
+            "$0"
+        ],
+        "description": "System,ShellExecute,<Action>,<FilePath>,[Params],[WorkDir],[%ExitOutVar%] "
+    },
+    "System,ShellExecuteEx": { 
+        "prefix": "System,ShellExecuteEx",
+        "body": [
+            "System,ShellExecuteEx,${1:<Action>},${2:<FilePath>}",
+            "$0"
+        ],
+        "description": "System,ShellExecuteEx,<Action>,<FilePath>,[Params],[WorkDir] "
+    },
+    "System,ShellExecuteDelete": { 
+        "prefix": "System,ShellExecuteDelete",
+        "body": [
+            "System,ShellExecuteDelete,${1:<Action>},${2:<FilePath>}",
+            "$0"
+        ],
+        "description": "System,ShellExecuteDelete,<Action>,<FilePath>,[Params],[WorkDir],[%ExitOutVar%] "
     }
 }

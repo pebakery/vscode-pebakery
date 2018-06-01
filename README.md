@@ -16,14 +16,19 @@ Licensed under MIT License.
 
 ## Changelog
 
+### 1.0.3
+
+- Updated command/keyword information to PEBakery Prerelease beta 4's.
+- Added command snippets.
+
 ### 1.0.2
 
-Disable word based suggestion of pebakery files to improve performance.
+- Disable word based suggestion of pebakery files to improve performance.
 
 ### 1.0.1
 
-Commands information updated to PEBakery Prerelease Beta 3's.
+- Updated command/keyword information to PEBakery Prerelease Beta 3's.
 
 ### 1.0.0
 
-Initial release.
+- Initial release.
