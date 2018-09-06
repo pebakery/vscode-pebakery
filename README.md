@@ -16,9 +16,13 @@ Licensed under MIT License.
 
 ## Changelog
 
+### 1.0.4
+
+- Updated command, keyword and snippet information to PEBakery Prerelease beta 5's.
+
 ### 1.0.3
 
-- Updated command/keyword information to PEBakery Prerelease beta 4's.
+- Updated command and keyword information to PEBakery Prerelease beta 4's.
 - Added command snippets.
 
 ### 1.0.2
