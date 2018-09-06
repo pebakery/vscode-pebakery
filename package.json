@@ -5,6 +5,7 @@
     "version": "1.0.4",
     "publisher": "joveler",
     "license": "MIT",
+    "icon": "PEBakeryLogo.png",
     "engines": {
         "vscode": "^1.21.0"
     },
