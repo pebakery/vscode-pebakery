@@ -48,7 +48,7 @@
                 },
                 {
                     "name": "variable.parameter.pebakery",
-                    "match": "#([0-9]|c|a|r)"
+                    "match": "#([0-9]|o[0-9]|c|a|r)"
                 }
             ]
         },
@@ -60,7 +60,7 @@
                 },
                 { 
                     "name": "constant.language.pebakery",
-                    "match": "(?i)\\b(Title|Description|Author|Credits|Version|Level|Selected|Mandatory|NoWarning|Interface|InterfaceList|Depend|Disable|History|lines)\\b"
+                    "match": "(?i)\\b(Title|Description|Author|Credits|Version|Level|Selected|Mandatory|NoWarning|Interface|InterfaceList|Depend|Disable|History|PathSetting|Contact|lines)\\b"
                 },
                 { 
                     "name": "constant.language.pebakery",
@@ -96,7 +96,7 @@
                 },
                 {
                     "name": "keyword.control.pebakery",
-                    "match": "(?i)\\b(FileCopy|FileDelete|FileRename|FileCreateBlank|FileSize|FileVersion|DirCopy|DirDelete|DirMove|DirMake|DirSize|PathMove|RegHiveLoad|RegHiveUnload|RegRead|RegWrite|RegDelete|RegMulti|RegImport|RegExport|RegCopy|TXTAddLine|TXTReplace|TXTDelLine|TXTDelSpaces|TXTDelEmptyLines|INIRead|INIWrite|INIDelete|INIReadSection|INIAddSection|INIDeleteSection|INIWriteTextLine|INIMerge|Compress|Decompress|Expand|CopyOrExpand|WebGet|ExtractFile|ExtractAndRun|ExtractAllFiles|Encode|Visible|ReadInterface|WriteInterface|Message|Echo|EchoFile|AddInterface|UserInput|Hash|StrFormat|Math|WimMount|WimUnmount|WimInfo|WimApply|WimExtract|WimExtractBulk|WimCapture|WimAppend|WimDelete|WimPathAdd|WimPathDelete|WimPathRename|WimOptimize|WimExport|Run|Exec|Loop|LoopLetter|If|Else|Begin|End|Set|SetMacro|AddVariables|Exit|Halt|Wait|Beep|GetParam|PackParam|System|ShellExecute|ShellExecuteEx|ShellExecuteDelete)\\b"
+                    "match": "(?i)\\b(FileCopy|FileDelete|FileRename|FileCreateBlank|FileSize|FileVersion|DirCopy|DirDelete|DirMove|DirMake|DirSize|PathMove|RegHiveLoad|RegHiveUnload|RegRead|RegWrite|RegDelete|RegMulti|RegImport|RegExport|RegCopy|TXTAddLine|TXTReplace|TXTDelLine|TXTDelSpaces|TXTDelEmptyLines|INIRead|INIWrite|INIDelete|INIReadSection|INIAddSection|INIDeleteSection|INIWriteTextLine|INIMerge|Compress|Decompress|Expand|CopyOrExpand|WebGet|ExtractFile|ExtractAndRun|ExtractAllFiles|Encode|Visible|ReadInterface|WriteInterface|Message|Echo|EchoFile|AddInterface|UserInput|Hash|StrFormat|Math|List|WimMount|WimUnmount|WimInfo|WimApply|WimExtract|WimExtractBulk|WimCapture|WimAppend|WimDelete|WimPathAdd|WimPathDelete|WimPathRename|WimOptimize|WimExport|Run|Exec|Loop|LoopLetter|RunEx|LoopEx|LoopLetterEx|If|Else|Begin|End|Set|SetMacro|AddVariables|Exit|Halt|Wait|Beep|GetParam|PackParam|System|ShellExecute|ShellExecuteEx|ShellExecuteDelete)\\b"
                 }
             ]
         },
@@ -116,11 +116,15 @@
                 },
                 {
                     "name": "entity.name.function.pebakery",
-                    "match": "(?i)\\b(IntToBytes|BytesToInt|Hex|Ceil|Floor|Round|Date|FileName|Ext|PathCombine|Inc|Dec|Mult|Div|Left|Right|SubStr|Len|LTrim|RTrim|CTrim|NTrim|UCase|LCase|Pos|PosX|Replace|ReplaceX|Split)\\b"
+                    "match": "(?i)\\b(IntToBytes|BytesToInt|Hex|Ceil|Floor|Round|Date|FileName|Ext|PathCombine|Inc|Dec|Mult|Div|Left|Right|SubStr|Len|LTrim|RTrim|CTrim|NTrim|UCase|LCase|Pos|PosX|Replace|ReplaceX|Split|PadLeft|PadRight)\\b"
                 },
                 {
                     "name": "entity.name.function.pebakery",
                     "match": "(?i)\\b(Add|Sub|Mul|Div|IntDiv|Neg|IntSign|IntUnsign|BoolAnd|BoolOr|BoolXor|BoolNot|BitAnd|BitOr|BitXor|BitNot|BitShift|Floor|Ceil|Round|Abs|Pow|Hex)\\b"
+                },
+                {
+                    "name": "entity.name.function.pebakery",
+                    "match": "(?i)\\b(Get|Set|Append|Insert|Remove|RemoveX|RemoveAt|Count|Pos|PosX|LastPos|LastPosX|Sort|SortX|SortN|SortNX)\\b"
                 },
                 {
                     "name": "entity.name.function.pebakery",

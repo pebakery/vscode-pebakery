@@ -689,6 +689,22 @@
         ],
         "description": "StrFormat,Split,<SrcStr>,<Delimiter>,<Index>,<%DestVar%> "
     },
+    "StrFormat,PadLeft": { 
+        "prefix": "StrFormat,PadLeft",
+        "body": [
+            "StrFormat,PadLeft,${1:<SrcStr>},${2:<Count>},${3:<PadChar},${4:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,PadLeft,<SrcStr>,<Count>,<PadChar>,<%DestVar%> "
+    },
+    "StrFormat,PadRight": { 
+        "prefix": "StrFormat,PadRight",
+        "body": [
+            "StrFormat,PadRight,${1:<SrcStr>},${2:<Count>},${3:<PadChar},${4:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "StrFormat,PadRight,<SrcStr>,<Count>,<PadChar>,<%DestVar%> "
+    },
     "Math,Add": { 
         "prefix": "Math,Add",
         "body": [
@@ -873,6 +889,126 @@
         ],
         "description": "Math,Hex,<%DestVar%>,<Src>,[BitSize] "
     },
+    "List,Get": { 
+        "prefix": "List,Get",
+        "body": [
+            "List,Get,${1:<%ListVar%>},${2:<Index>},${3:<%DestVar%>},${4:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,Get,<%ListVar%>,<Index>,<%DestVar%>,[Delim=<Str>] "
+    },
+    "List,Set": { 
+        "prefix": "List,Set",
+        "body": [
+            "List,Set,${1:<%ListVar%>},${2:<Index>},${3:<Item>},${4:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,Set,<%ListVar%>,<Index>,<Item>,[Delim=<Str>] "
+    },
+    "List,Append": { 
+        "prefix": "List,Append",
+        "body": [
+            "List,Append,${1:<%ListVar%>},${2:<Item>},${3:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,Append,<%ListVar%>,<Item>,[Delim=<Str>] "
+    },
+    "List,Insert": { 
+        "prefix": "List,Insert",
+        "body": [
+            "List,Insert,${1:<%ListVar%>},${2:<Index>},${3:<Item>},${4:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,Insert,<%ListVar%>,<Index>,<Item>,[Delim=<Str>] "
+    },
+    "List,Remove": { 
+        "prefix": "List,Remove",
+        "body": [
+            "List,Remove,${1:<%ListVar%>},${2:<Item>},${3:[Delim=Str]}",
+            "$0"
+        ],
+        "description": "List,Remove,<%ListVar%>,<Item>,[Delim=<Str>] "
+    },
+    "List,RemoveAt": { 
+        "prefix": "List,RemoveAt",
+        "body": [
+            "List,RemoveAt,${1:<%ListVar%>},${2:<Index>},${3:[Delim=Str]}",
+            "$0"
+        ],
+        "description": "List,RemoveAt,<%ListVar%>,<Index>,[Delim=<Str>] "
+    },
+    "List,Count": { 
+        "prefix": "List,Count",
+        "body": [
+            "List,Count,${1:<%ListVar%>},${2:<%DestVar%>},${3:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,Count,<%ListVar%>,<%DestVar%>,[Delim=<Str>] "
+    },
+    "List,Pos": { 
+        "prefix": "List,Pos",
+        "body": [
+            "List,Pos,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,Pos,<%ListVar%>,<Item>,<%DestVar%>,[Delim=<Str>] "
+    },
+    "List,PosX": { 
+        "prefix": "List,PosX",
+        "body": [
+            "List,PosX,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,PosX,<%ListVar%>,<Item>,<%DestVar%>,[Delim=<Str>] "
+    },
+    "List,LastPos": { 
+        "prefix": "List,LastPos",
+        "body": [
+            "List,LastPos,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,LastPos,<%ListVar%>,<Item>,<%DestVar%>,[Delim=<Str>] "
+    },
+    "List,LastPosX": { 
+        "prefix": "List,LastPosX",
+        "body": [
+            "List,LastPosX,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,LastPosX,<%ListVar%>,<Item>,<%DestVar%>,[Delim=<Str>] "
+    },
+    "List,Sort": { 
+        "prefix": "List,Sort",
+        "body": [
+            "List,Sort,${1:<%ListVar%>},${2:<Asc|Desc>},${4:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,Sort,<%ListVar%>,<Asc|Desc>,[Delim=<Str>] "
+    },
+    "List,SortX": { 
+        "prefix": "List,SortX",
+        "body": [
+            "List,SortX,${1:<%ListVar%>},${2:<Asc|Desc>},${4:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,SortX,<%ListVar%>,<Asc|Desc>,[Delim=<Str>] "
+    },
+    "List,SortN": { 
+        "prefix": "List,SortN",
+        "body": [
+            "List,SortN,${1:<%ListVar%>},${2:<Asc|Desc>},${4:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,SortN,<%ListVar%>,<Asc|Desc>,[Delim=<Str>] "
+    },
+    "List,SortNX": { 
+        "prefix": "List,SortNX",
+        "body": [
+            "List,SortNX,${1:<%ListVar%>},${2:<Asc|Desc>},${4:[Delim=<Str>]}",
+            "$0"
+        ],
+        "description": "List,SortNX,<%ListVar%>,<Asc|Desc>,[Delim=<Str>] "
+    },
     "WimMount": { 
         "prefix": "WimMount",
         "body": [
@@ -991,7 +1127,7 @@
             "Run,${1:<ScriptFile>},${2:<Section>}",
             "$0"
         ],
-        "description": "Run,<ScriptFile>,<Section>,[Params] "
+        "description": "Run,<ScriptFile>,<Section>,[InParams] "
     },
     "Exec": { 
         "prefix": "Exec",
@@ -999,7 +1135,15 @@
             "Exec,${1:<ScriptFile>},${2:<Section>}",
             "$0"
         ],
-        "description": "Exec,<ScriptFile>,<Section>,[Params] "
+        "description": "Exec,<ScriptFile>,<Section>,[InParams] "
+    },
+    "RunEx": { 
+        "prefix": "RunEx",
+        "body": [
+            "RunEx,${1:<ScriptFile>},${2:<Section>}",
+            "$0"
+        ],
+        "description": "RunEx,<ScriptFile>,<Section>,[InOutParams] "
     },
     "Loop (Start)": { 
         "prefix": "Loop",
@@ -1007,7 +1151,7 @@
             "Loop,${1:<ScriptFile>},${2:<Section>},${3:<StartIndex>},${4:<EndIndex>}",
             "$0"
         ],
-        "description": "Loop,<ScriptFile>,<Section>,<StartIndex>,<EndIndex>[,Params] "
+        "description": "Loop,<ScriptFile>,<Section>,<StartIndex>,<EndIndex>,[InParams] "
     },
     "Loop (Break)": { 
         "prefix": "Loop",
@@ -1017,16 +1161,48 @@
         ],
         "description": "Loop,BREAK "
     },
+    "LoopEx (Start)": { 
+        "prefix": "LoopEx",
+        "body": [
+            "LoopEx,${1:<ScriptFile>},${2:<Section>},${3:<StartIndex>},${4:<EndIndex>}",
+            "$0"
+        ],
+        "description": "LoopEx,<ScriptFile>,<Section>,<StartIndex>,<EndIndex>,[InOutParams] "
+    },
+    "LoopEx (Break)": { 
+        "prefix": "LoopEx",
+        "body": [
+            "LoopEx,BREAK",
+            "$0"
+        ],
+        "description": "LoopEx,BREAK "
+    },
     "LoopLetter (Start)": { 
         "prefix": "LoopLetter",
         "body": [
             "LoopLetter,${1:<ScriptFile>},${2:<Section>},${3:<StartLetter>},${4:<EndLetter>}",
             "$0"
         ],
-        "description": "LoopLetter,<ScriptFile>,<Section>,<StartLetter>,<EndLetter>[,Params] "
+        "description": "LoopLetter,<ScriptFile>,<Section>,<StartLetter>,<EndLetter>,[InParams] "
     },
     "LoopLetter (Break)": { 
         "prefix": "LoopLetter",
+        "body": [
+            "Loop,BREAK",
+            "$0"
+        ],
+        "description": "Loop,BREAK "
+    },
+    "LoopLetterEx (Start)": { 
+        "prefix": "LoopLetterEx",
+        "body": [
+            "LoopLetterEx,${1:<ScriptFile>},${2:<Section>},${3:<StartLetter>},${4:<EndLetter>}",
+            "$0"
+        ],
+        "description": "LoopLetterEx,<ScriptFile>,<Section>,<StartLetter>,<EndLetter>,[InOutParams] "
+    },
+    "LoopLetterEx (Break)": { 
+        "prefix": "LoopLetterEx",
         "body": [
             "Loop,BREAK",
             "$0"
