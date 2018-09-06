@@ -2,13 +2,19 @@
     "name": "pebakery",
     "displayName": "PEBakery",
     "description": "PEBakery Syntax Highlighter",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "publisher": "joveler",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.21.0"
     },
+    "keywords": [
+        "pebakery",
+        "winbuilder"
+    ],
     "categories": [
-        "Languages"
+        "Programming Languages",
+        "Snippets"
     ],
     "activationEvents": [
         "*"
@@ -51,12 +57,13 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
     },
     "dependencies": {
-        "@types/node": "^9.6.20",
-        "tslint": "^5.10.0",
-        "typescript": "^2.9.1",
-        "vscode": "^1.1.18"
+        "@types/node": "^9.6.31",
+        "tslint": "^5.11.0",
+        "typescript": "^2.9.2",
+        "vscode": "^1.1.21"
     }
 }
