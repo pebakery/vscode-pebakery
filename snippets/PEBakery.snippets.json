@@ -153,6 +153,14 @@
         ],
         "description": "RegWrite,<HKey>,<ValueType>,<KeyPath>,<ValueName>,<ValueData>,[NOWARN] "
     },
+    "RegWriteEx": { 
+        "prefix": "RegWriteEx",
+        "body": [
+            "RegWriteEx,${1:<HKey>},${2:<ValueType>},${3:<KeyPath>},${4:<ValueName>},${5:<ValueData>}",
+            "$0"
+        ],
+        "description": "RegWriteEx,<HKey>,<ValueType>,<KeyPath>,<ValueName>,<ValueData>,[NOWARN] "
+    },
     "RegDelete": { 
         "prefix": "RegDelete",
         "body": [
@@ -296,6 +304,14 @@
             "$0"
         ],
         "description": "IniMerge,<SrcFile>,<DestFile> "
+    },
+    "IniCompact": { 
+        "prefix": "IniCompact",
+        "body": [
+            "IniCompact,${1:<FileName>}",
+            "$0"
+        ],
+        "description": "IniCompact,<FileName> "
     },
     "Compress": { 
         "prefix": "Compress",
@@ -585,13 +601,13 @@
         ],
         "description": "StrFormat,Right,<SrcStr>,<Count>,<%DestVar%> "
     },
-    "StrFormat,SubStr": { 
-        "prefix": "StrFormat,SubStr",
+    "StrFormat,Mid": { 
+        "prefix": "StrFormat,Mid",
         "body": [
-            "StrFormat,SubStr,${1:<SrcStr>},${2:<StartPos>},${3:<Length>},${4:<%DestVar%>}",
+            "StrFormat,Mid,${1:<SrcStr>},${2:<StartPos>},${3:<Length>},${4:<%DestVar%>}",
             "$0"
         ],
-        "description": "StrFormat,SubStr,<SrcStr>,<StartPos>,<Length>,<%DestVar%> "
+        "description": "StrFormat,Mid,<SrcStr>,<StartPos>,<Length>,<%DestVar%> "
     },
     "StrFormat,Len": { 
         "prefix": "StrFormat,Len",
@@ -756,18 +772,18 @@
     "Math,ToSign": { 
         "prefix": "Math,ToSign",
         "body": [
-            "Math,ToSign,${1:<%DestVar%>},${2:<Src>},${3:[BitSize]}",
+            "Math,ToSign,${1:<%DestVar%>},${2:<Src>},${3:<BitSize>}",
             "$0"
         ],
-        "description": "Math,ToSign,<%DestVar%>,<Src>,[BitSize] "
+        "description": "Math,ToSign,<%DestVar%>,<Src>,<BitSize> "
     },
     "Math,ToUnsign": { 
         "prefix": "Math,ToUnsign",
         "body": [
-            "Math,ToUnsign,${1:<%DestVar%>},${2:<Src>},${3:[BitSize]}",
+            "Math,ToUnsign,${1:<%DestVar%>},${2:<Src>},${3:<BitSize>}",
             "$0"
         ],
-        "description": "Math,ToUnsign,<%DestVar%>,<Src>,[BitSize] "
+        "description": "Math,ToUnsign,<%DestVar%>,<Src>,<BitSize> "
     },
     "Math,BoolAnd": { 
         "prefix": "Math,BoolAnd",
@@ -828,18 +844,18 @@
     "Math,BitNot": { 
         "prefix": "Math,BitNot",
         "body": [
-            "Math,BitNot,${1:<%DestVar%>},${2:<Src>},${3:[BitSize]}",
+            "Math,BitNot,${1:<%DestVar%>},${2:<Src>},${3:<BitSize>}",
             "$0"
         ],
-        "description": "Math,BitNot,<%DestVar%>,<Src>,[BitSize] "
+        "description": "Math,BitNot,<%DestVar%>,<Src>,<BitSize> "
     },
     "Math,BitShift": { 
         "prefix": "Math,BitShift",
         "body": [
-            "Math,BitShift,${1:<%DestVar%>},${2:<Src>},${3:<Direction>},${4:<Shift>},${5:[BitSize]}",
+            "Math,BitShift,${1:<%DestVar%>},${2:<Src>},${3:<Direction>},${4:<Shift>},${5:<BitSize>}",
             "$0"
         ],
-        "description": "<%DestVar%>,<Src>,<Direction>,<Shift>,[BitSize],[UNSIGNED] "
+        "description": "<%DestVar%>,<Src>,<Direction>,<Shift>,<BitSize>,[UNSIGNED] "
     },
     "Math,Ceil": { 
         "prefix": "Math,Ceil",
@@ -884,10 +900,26 @@
     "Math,Hex": { 
         "prefix": "Math,Hex",
         "body": [
-            "Math,Hex,${1:<%DestVar%>},${2:<Src>},${3:[BitSize]}",
+            "Math,Hex,${1:<%DestVar%>},${2:<Src>},${3:<BitSize>}",
             "$0"
         ],
-        "description": "Math,Hex,<%DestVar%>,<Src>,[BitSize] "
+        "description": "Math,Hex,<%DestVar%>,<Src>,<BitSize> "
+    },
+    "Math,Dec": { 
+        "prefix": "Math,Dec",
+        "body": [
+            "Math,Dec,${1:<%DestVar%>},${2:<Src>},${3:<BitSize>}",
+            "$0"
+        ],
+        "description": "Math,Dec,<%DestVar%>,<Src>,<BitSize> "
+    },
+    "Math,Rand": { 
+        "prefix": "Math,Rand",
+        "body": [
+            "Math,Rand,${1:<%DestVar%>},${2:[<Min>},${3:<Max>]}",
+            "$0"
+        ],
+        "description": "Math,Rand,<%DestVar%>[,<Min>,<Max>] "
     },
     "List,Get": { 
         "prefix": "List,Get",
