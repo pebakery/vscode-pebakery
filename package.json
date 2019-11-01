@@ -2,7 +2,7 @@
     "name": "pebakery",
     "displayName": "PEBakery",
     "description": "PEBakery Syntax Highlighter",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "publisher": "joveler",
     "license": "MIT",
     "icon": "PEBakeryLogo.png",
@@ -61,8 +61,8 @@
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "npm run compile && node ./node_modules/vscode/bin/test"
     },
-    "dependencies": {
-        "@types/node": "^12.11.7",
+    "devDependencies": {
+        "@types/node": "^12.12.3",
         "tslint": "^5.20.0",
         "typescript": "^3.6.4",
         "vscode": "^1.1.36"
