@@ -62,9 +62,9 @@
         "test": "npm run compile && node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "@types/node": "^12.12.3",
-        "tslint": "^5.20.0",
-        "typescript": "^3.6.4",
+        "@types/node": "^12.12.30",
+        "tslint": "^5.20.1",
+        "typescript": "^3.8.3",
         "vscode": "^1.1.36"
     }
 }
