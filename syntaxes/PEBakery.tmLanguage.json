@@ -25,7 +25,7 @@
             "patterns": [
                 {
                     "name": "comment.line.pebakery",
-                    "match": "^(\\/\\/|#).*$"
+                    "match": "^(\\/\\/|#|;).*$"
                 }
             ]
         },
