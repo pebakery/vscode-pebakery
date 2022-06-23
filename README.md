@@ -1,11 +1,11 @@
-# PEBakery Syntax Highlighter for Visual Studio Code
+# PEBakery Language Support for Visual Studio Code
 
 Extension for VS Code which provides PEBakery language support.
 
 ## Features
 
-- Syntax highlighting for PEBakery files (`.script`, `.project`)
-- Snippets of PEBakery commands
+- Syntax highlighting for PEBakery files (`.script`, `.project`).
+- Snippets of PEBakery commands.
 
 ## Install
 
@@ -14,31 +14,8 @@ Extension for VS Code which provides PEBakery language support.
 
 ## License
 
-Licensed under MIT License.
+Licensed under [MIT License](./LICENSE).
 
 ## Changelog
 
-### 1.0.5
-
-- Updated keywords, and snippets to of PEBakery Prerelease beta 6
-
-### 1.0.4
-
-- Updated keywords, and snippets to of PEBakery Prerelease beta 5
-
-### 1.0.3
-
-- Updated keywords to of PEBakery Prerelease beta 4
-- Added command snippets
-
-### 1.0.2
-
-- Disable word based suggestion of pebakery files to improve performance
-
-### 1.0.1
-
-- Updated keywords to of PEBakery Prerelease Beta 3
-
-### 1.0.0
-
-- Initial release
+Please read [ChangeLog](CHANGELOG.md).

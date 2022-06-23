@@ -55,7 +55,7 @@
             "FileCreateBlank,${1:<FilePath>}",
             "$0"
         ],
-        "description": "FileCreateBlank,<FilePath>,[Encoding],[PRESERVE],[NOWARN] "
+        "description": "FileCreateBlank,<FilePath>,[Encoding=<Value>],[PRESERVE],[NOWARN] "
     },
     "FileSize": { 
         "prefix": "FileSize",
@@ -244,10 +244,10 @@
     "IniRead": { 
         "prefix": "IniRead",
         "body": [
-            "IniRead,${1:<FileName>},${2:<Section>},${3:<Key>},${4:<%DestVar%>}",
+            "IniRead,${1:<FileName>},${2:<Section>},${3:<Key>},${4:<%DestVar%>},${5:[Default=\"\"]}",
             "$0"
         ],
-        "description": "IniRead,<FileName>,<Section>,<Key>,<%DestVar%> "
+        "description": "IniRead,<FileName>,<Section>,<Key>,<%DestVar%>,[Default=\"\"] "
     },
     "IniWrite": { 
         "prefix": "IniWrite",
@@ -348,10 +348,10 @@
     "WebGet": { 
         "prefix": "WebGet",
         "body": [
-            "WebGet,${1:<URL>},${2:<DestPath>}",
+            "WebGet,${1:<URL>},${2:<DestPath>},${3:[HashType=HashDigest]},${4:[Referer=]},${5:[UserAgent=]}",
             "$0"
         ],
-        "description": "WebGet,<URL>,<DestPath>,[Hash=HashType,HashDigest],[NOERR] "
+        "description": "WebGet,<URL>,<DestPath>,[HashType=HashDigest],[TimeOut=],[Referer=],[UserAgent=],[NOERR] "
     },
     "ExtractFile": { 
         "prefix": "ExtractFile",
@@ -1456,6 +1456,14 @@
             "$0"
         ],
         "description": "Halt,<Message>,[NOWARN] "
+    },
+    "Return": { 
+        "prefix": "Return",
+        "body": [
+            "Return,${1:[VALUE]}",
+            "$0"
+        ],
+        "description": "Return,[VALUE] "
     },
     "Wait": { 
         "prefix": "Wait",
