@@ -16,7 +16,7 @@ export class IniSectionFoldingRangeProvider implements vscode.FoldingRangeProvid
             const textline: vscode.TextLine = document.lineAt(i);
             const line: string = textline.text.trim();
             if (line.match(sectionRegex)) {
-                if (lastIdx == -1) {
+                if (lastIdx === -1) {
                     lastIdx = i;
                 } else {
                     foldingRanges.push(new vscode.FoldingRange(lastIdx, i - 1 - endEmptyLines, vscode.FoldingRangeKind.Region));
@@ -24,7 +24,7 @@ export class IniSectionFoldingRangeProvider implements vscode.FoldingRangeProvid
                     lastIdx = i;
                 }
                 endEmptyLines = 0;
-            } else if (line.length == 0) {
+            } else if (line.length === 0) {
                 endEmptyLines += 1;
             } else {
                 // Reset empty line counter
@@ -32,7 +32,7 @@ export class IniSectionFoldingRangeProvider implements vscode.FoldingRangeProvid
             }
         }
         
-        if (lastIdx != -1) {
+        if (lastIdx !== -1) {
             foldingRanges.push(new vscode.FoldingRange(lastIdx, document.lineCount - 1 - endEmptyLines, vscode.FoldingRangeKind.Region));
         }
 

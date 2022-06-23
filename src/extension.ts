@@ -13,7 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
     }, true);
 
     // Register ini-style section folding range provider.
-    context.subscriptions.push(vscode.languages.registerFoldingRangeProvider("pebakery", new IniSectionFoldingRangeProvider()))
+    context.subscriptions.push(vscode.languages.registerFoldingRangeProvider("pebakery", new IniSectionFoldingRangeProvider()));
 }
 
 // this method is called when your extension is deactivated
