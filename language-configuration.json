@@ -1,4 +1,5 @@
 {
+    // Default comment prefix
     "comments": {
         "lineComment": "//",
     },
