@@ -18,7 +18,7 @@
         "Snippets"
     ],
     "activationEvents": [
-        "*"
+        "onLanguage:pebakery"
     ],
     "repository": {
         "type": "git",
