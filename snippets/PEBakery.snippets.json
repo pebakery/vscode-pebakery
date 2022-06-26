@@ -1,4 +1,5 @@
 {
+    // Script Scaffold
     "EmptyScript": {
         "prefix": "EmptyScript",
         "body": [
@@ -17,190 +18,193 @@
         ],
         "description": "Empty Script Template "
     },
+    // 01 File
     "FileCopy": { 
         "prefix": "FileCopy",
+        "description": "Copies one or more files.",
         "body": [
-            "FileCopy,${1:<SrcFile>},${2:<DestPath>}",
+            "FileCopy,${1:SrcFile},${2:DestPath},${3:[PRESERVE},${4:[NOWARN]},${5:[NOREC]}",
             "$0"
-        ],
-        "description": "FileCopy,<SrcFile>,<DestPath>,[PRESERVE],[NOWARN],[NOREC] "
+        ]
     },
     "FileDelete": { 
         "prefix": "FileDelete",
         "body": [
-            "FileDelete,${1:<FilePath>}",
+            "FileDelete,${1:<FilePath>},${2:[NOWARN]},${3:[NOREC]}",
             "$0"
         ],
-        "description": "FileDelete,<FilePath>,[NOWARN],[NOREC] "
+        "description": "Deletes a file."
     },
     "FileRename": { 
         "prefix": "FileRename",
+        "description": "Rename or move a file.",
         "body": [
-            "FileRename,${1:<SrcPath>},${2:<DestPath>}",
+            "FileRename,${1:SrcPath},${2:DestPath}",
             "$0"
-        ],
-        "description": "FileRename,<SrcPath>,<DestPath> "
+        ]
     },
     "FileMove": { 
         "prefix": "FileMove",
+        "description": "Rename or move a file.",
         "body": [
-            "FileMove,${1:<SrcPath>},${2:<DestPath>}",
+            "FileMove,${1:SrcPath},${2:DestPath}",
             "$0"
-        ],
-        "description": "FileMove,<SrcPath>,<DestPath> "
+        ]
     },
     "FileCreateBlank": { 
         "prefix": "FileCreateBlank",
+        "description": "Creates an empty file.",
         "body": [
-            "FileCreateBlank,${1:<FilePath>}",
+            "FileCreateBlank,${1:<FilePath>},${2:[Encoding=<Value>]},${3:[PRESERVE]},${4:[NOWARN]}",
             "$0"
-        ],
-        "description": "FileCreateBlank,<FilePath>,[Encoding=<Value>],[PRESERVE],[NOWARN] "
+        ]
     },
     "FileSize": { 
         "prefix": "FileSize",
+        "description": "Gets the size of a file.",
         "body": [
-            "FileSize,${1:<FilePath>},${2:<%DestVar%>}",
+            "FileSize,${1:FilePath},${2:%DestVar%}",
             "$0"
-        ],
-        "description": "FileSize,<FilePath>,<%DestVar%> "
+        ]
     },
     "FileVersion": { 
         "prefix": "FileVersion",
+        "description": "Retrieves the version number of the specified file.",
         "body": [
-            "FileVersion,${1:<FilePath>},${2:<%DestVar%>}",
+            "FileVersion,${1:FilePath},${2:%DestVar%}",
             "$0"
-        ],
-        "description": "FileVersion,<FilePath>,<%DestVar%> "
+        ]
     },
     "DirCopy": { 
         "prefix": "DirCopy",
+        "description": "Copies a directory along with all sub-directories and files.",
         "body": [
-            "DirCopy,${1:<SrcDir>},${2:<DestPath>}",
+            "DirCopy,${1:SrcDir},${2:DestDir}",
             "$0"
-        ],
-        "description": "DirCopy,<SrcDir>,<DestPath> "
+        ]
     },
     "DirDelete": { 
         "prefix": "DirDelete",
+        "description": "Deletes a directory and all files and sub-directories it contains.",
         "body": [
-            "DirDelete,${1:<DirPath>}",
+            "DirDelete,${1:DirPath}",
             "$0"
-        ],
-        "description": "DirDelete,<DirPath> "
+        ]
     },
     "DirMove": { 
         "prefix": "DirMove",
+        "description": "Moves a directory.",
         "body": [
-            "DirMove,${1:<SrcDir>},${2:<DestPath>}",
+            "DirMove,${1:SrcDir},${2:DestPath}",
             "$0"
-        ],
-        "description": "DirMove,<SrcDir>,<DestPath> "
+        ]
     },
     "DirMake": { 
         "prefix": "DirMake",
+        "description": "Creates a directory.",
         "body": [
-            "DirMake,${1:<DestDir>}",
+            "DirMake,${1:DestDir}",
             "$0"
-        ],
-        "description": "DirMake,<DestDir> "
+        ]
     },
     "DirSize": { 
         "prefix": "DirSize",
+        "description": "Gets the size of a directory.",
         "body": [
-            "DirSize,${1:<DirPath>},${2:<%DestVar%>}",
+            "DirSize,${1:DirPath},${2:%DestVar%}",
             "$0"
-        ],
-        "description": "DirSize,<DirPath>,<%DestVar%> "
+        ]
     },
     "PathMove": { 
         "prefix": "PathMove",
+        "description": "Moves a file or directory.",
         "body": [
-            "PathMove,${1:<SrcPath>},${2:<DestPath>}",
+            "PathMove,${1:SrcPath},${2:DestPath}",
             "$0"
-        ],
-        "description": "PathMove,<SrcPath>,<DestPath> "
+        ]
     },
+    // 02 Regsitry
     "RegHiveLoad": { 
         "prefix": "RegHiveLoad",
+        "description": "Loads an external registry hive onto your local registry.",
         "body": [
-            "RegHiveLoad,${1:<KeyPath>},${2:<HiveFile>}",
+            "RegHiveLoad,${1:KeyPath},${2:HiveFile}",
             "$0"
-        ],
-        "description": "RegHiveLoad,<KeyPath>,<HiveFile> "
+        ]
     },
     "RegHiveUnload": { 
         "prefix": "RegHiveUnload",
+        "description": "Unloads an external registry hive from your local registry.",
         "body": [
-            "RegHiveUnload,${1:<KeyPath>}",
+            "RegHiveUnload,${1:KeyPath}",
             "$0"
-        ],
-        "description": "RegHiveLoad,<KeyPath> "
+        ]
     },
     "RegRead": { 
         "prefix": "RegRead",
+        "description": "Reads a value from the registry.",
         "body": [
-            "RegRead,${1:<HKey>},${2:<KeyPath>},${3:<ValueName>},${4:<%DestVar%>}",
+            "RegRead,${1:HKey},${2:KeyPath},${3:ValueName},${4:%DestVar%}",
             "$0"
-        ],
-        "description": "RegRead,<HKey>,<KeyPath>,<ValueName>,<%DestVar%> "
+        ]
     },
     "RegWrite": { 
         "prefix": "RegWrite",
+        "description": "Create or modify a key or value in the registry.",
         "body": [
-            "RegWrite,${1:<HKey>},${2:<ValueType>},${3:<KeyPath>},${4:<ValueName>},${5:<ValueData>}",
+            "RegWrite,${1:HKey},${2:ValueType},${3:KeyPath},${4:ValueName},${5:ValueData},${6:[NOWARN]}",
             "$0"
-        ],
-        "description": "RegWrite,<HKey>,<ValueType>,<KeyPath>,<ValueName>,<ValueData>,[NOWARN] "
+        ]
     },
     "RegWriteEx": { 
         "prefix": "RegWriteEx",
+        "description": "Create or modify a key or value in the registry.",
         "body": [
-            "RegWriteEx,${1:<HKey>},${2:<ValueType>},${3:<KeyPath>},${4:<ValueName>},${5:<ValueData>}",
+            "RegWriteEx,${1:<HKey>},${2:<ValueType>},${3:<KeyPath>},${4:<ValueName>},${5:<ValueData>},${6:[NOWARN]}",
             "$0"
-        ],
-        "description": "RegWriteEx,<HKey>,<ValueType>,<KeyPath>,<ValueName>,<ValueData>,[NOWARN] "
+        ]
     },
     "RegDelete": { 
         "prefix": "RegDelete",
+        "description": "Deletes a key or value from the registry.",
         "body": [
-            "RegDelete,${1:<HKey>},${2:<KeyPath>},${3:[ValueName]}",
+            "RegDelete,${1:HKey},${2:KeyPath},${3:[ValueName]}",
             "$0"
-        ],
-        "description": "RegDelete,<HKey>,<KeyPath>,[ValueName] "
+        ]
     },
     "RegMulti": { 
         "prefix": "RegMulti",
+        "description": "Modify a multi-string value in the registry.",
         "body": [
-            "RegMulti,${1:<HKey>},${2:<KeyPath>},${3:<ValueName>},${4:<Type>},${5:<Arg1>},${6:[Arg2]}",
+            "RegMulti,${1:HKey},${2:KeyPath},${3:ValueName},${4:Action},${5:Arg1},${6:[Arg2]}",
             "$0"
-        ],
-        "description": "RegMulti,<HKey>,<KeyPath>,<ValueName>,<Type>,<Arg1>,[Arg2] "
+        ]
     },
     "RegImport": { 
         "prefix": "RegImport",
+        "description": "Imports the contents of a registry file (*.reg) to your local registry system.",
         "body": [
-            "RegImport,${1:<RegFile>}",
+            "RegImport,${1:RegFile}",
             "$0"
-        ],
-        "description": "RegImport,<RegFile> "
+        ]
     },
     "RegExport": { 
         "prefix": "RegExport",
+        "description": "Exports the contents of a registry key to a *.reg file.",
         "body": [
-            "RegExport,${1:<Key>},${2:<RegFile>}",
+            "RegExport,${1:HKey},${2:KeyPath},${3:RegFile}",
             "$0"
-        ],
-        "description": "RegExport,<Key>,<RegFile> "
+        ]
     },
     "RegCopy": { 
         "prefix": "RegCopy",
         "body": [
-            "RegCopy,${1:<SrcKey>},${2:<SrcKeyPath>},${3:<DestKey>},${4:<DestKeyPath>}",
+            "RegCopy,${1:SrcKey},${2:SrcKeyPath},${3:DestKey},${4:DestKeyPath},${5:[WILDCARD]}",
             "$0"
         ],
-        "description": "RegCopy,<SrcKey>,<SrcKeyPath>,<DestKey>,<DestKeyPath>,[WILDCARD] "
+        "description": "Copies all subkeys and values from one registry key to another."
     },
+    // 03 Text
     "TXTAddLine": { 
         "prefix": "TXTAddLine",
         "body": [
@@ -241,6 +245,7 @@
         ],
         "description": "TXTDelEmptyLines,<FileName> "
     },
+    // 04 Ini
     "IniRead": { 
         "prefix": "IniRead",
         "body": [
@@ -313,6 +318,120 @@
         ],
         "description": "IniCompact,<FileName> "
     },
+    // 05 Wim
+    "WimMount": { 
+        "prefix": "WimMount",
+        "body": [
+            "WimMount,${1:<SrcWim>},${2:<ImageIndex>},${3:<MountDir>},${4:<MountOption>}",
+            "$0"
+        ],
+        "description": "WimMount,<SrcWim>,<ImageIndex>,<MountDir>,<MountOption> "
+    },
+    "WimUnmount": { 
+        "prefix": "WimUnmount",
+        "body": [
+            "WimUnmount,${1:<MountDir>},${2:<UnmountOption>}",
+            "$0"
+        ],
+        "description": "WimUnmount,<MountDir>,<UnmountOption> "
+    },
+    "WimInfo": { 
+        "prefix": "WimInfo",
+        "body": [
+            "WimInfo,${1:<SrcWim>},${2:<ImageIndex>},${3:<Key>},${4:<%DestVar%>}",
+            "$0"
+        ],
+        "description": "WimInfo,<SrcWim>,<ImageIndex>,<Key>,<%DestVar%>,[NOERR] "
+    },
+    "WimApply": { 
+        "prefix": "WimApply",
+        "body": [
+            "WimApply,${1:<SrcWim>},${2:<ImageIndex>},${3:<DestDir>}",
+            "$0"
+        ],
+        "description": "WimApply,<SrcWim>,<ImageIndex>,<DestDir>,[Split=<Str>],[CHECK],[NOACL],[NOATTRIB] "
+    },
+    "WimExtract": { 
+        "prefix": "WimExtract",
+        "body": [
+            "WimExtract,${1:<SrcWim>},${2:<ImageIndex>},${3:<ExtractPath>},${4:<DestDir>}",
+            "$0"
+        ],
+        "description": "WimExtract,<SrcWim>,<ImageIndex>,<ExtractPath>,<DestDir>,[Split=<Str>],[CHECK],[NOACL],[NOATTRIB] "
+    },
+    "WimExtractBulk": { 
+        "prefix": "WimExtractBulk",
+        "body": [
+            "WimExtractBulk,${1:<SrcWim>},${2:<ImageIndex>},${3:<ListFile>},${3:<DestDir>}",
+            "$0"
+        ],
+        "description": "WimExtractBulk,<SrcWim>,<ImageIndex>,<ListFile>,<DestDir>,[Split=<Str>],[CHECK],[NOACL],[NOATTRIB],[NOERR],[NOWARN] "
+    },
+    "WimCapture": { 
+        "prefix": "WimCapture",
+        "body": [
+            "WimCapture,${1:<SrcWim>},${2:<DestWim>},${3:<Compress>},${4:[ImageName=<Str>],${5:[ImageDesc=<Str>]",
+            "$0"
+        ],
+        "description": "WimCapture,<SrcDir>,<DestWim>,<Compress>,[ImageName=<Str>],[ImageDesc=<Str>],[Flags=<Str>],[BOOT],[CHECK],[NOACL] "
+    },
+    "WimAppend": { 
+        "prefix": "WimAppend",
+        "body": [
+            "WimAppend,${1:<SrcDir>},${2:<DestWim>},${3:[ImageName=<Str>},${4:[ImageDesc=<Str>]",
+            "$0"
+        ],
+        "description": "WimAppend,<SrcDir>,<DestWim>,[ImageName=<Str>],[ImageDesc=<Str>],[Flags=<Str>],[DeltaIndex=INT],[BOOT],[CHECK],[NOACL] "
+    },
+    "WimDelete": { 
+        "prefix": "WimDelete",
+        "body": [
+            "WimDelete,${1:<SrcWim>},${2:<ImageIndex>}",
+            "$0"
+        ],
+        "description": "WimDelete,<SrcWim>,<ImageIndex>,[CHECK] "
+    },
+    "WimPathAdd": { 
+        "prefix": "WimPathAdd",
+        "body": [
+            "WimPathAdd,${1:<WimFile>},${2:<ImageIndex>},${3:<SrcPath>},${4:<DestPath>}",
+            "$0"
+        ],
+        "description": "WimPathAdd,<WimFile>,<ImageIndex>,<SrcPath>,<DestPath>,[CHECK],[NOACL],[PRESERVE],[REBUILD] "
+    },
+    "WimPathDelete": { 
+        "prefix": "WimPathDelete",
+        "body": [
+            "WimPathDelete,${1:<WimFile>},${2:<ImageIndex>},${3:<Path>}",
+            "$0"
+        ],
+        "description": "WimPathDelete,<WimFile>,<ImageIndex>,<Path>,[CHECK],[REBUILD] "
+    },
+    "WimPathRename": { 
+        "prefix": "WimPathRename",
+        "body": [
+            "WimPathRename,${1:<WimFile>},${2:<ImageIndex>},${3:<SrcPath>},${4:<DestPath>}",
+            "$0"
+        ],
+        "description": "WimPathRename,<WimFile>,<ImageIndex>,<SrcPath>,<DestPath>,[CHECK],[REBUILD] "
+    },
+    "WimOptimize": { 
+        "prefix": "WimOptimize",
+        "body": [
+            "WimOptimize,${1:<WimFile>}",
+            "$0"
+        ],
+        "description": "WimOptimize,<WimFile>,[Recomp=<Str>],[CHECK|NOCHECK] "
+    },
+    "WimExport": { 
+        "prefix": "WimExport",
+        "body": [
+            "WimExport,${1:<SrcWim>},${2:<ImageIndex>},${3:<DestWim>},${4:[ImageName=<Str>},${5:[ImageDesc=<Str>]",
+            "$0"
+        ],
+        "description": "WimExport,<SrcWim>,<ImageIndex>,<DestWim>,[ImageName=<Str>],[ImageDesc=<Str>],[Split=<Str>],[Recomp=<Str>],[BOOT],[CHECK|NOCHECK] "
+    },
+    // 06 Archive
     "Compress": { 
         "prefix": "Compress",
         "body": [
@@ -345,6 +464,7 @@
         ],
         "description": "CopyOrExpand,<SrcFile>,<DestPath>,[PRESERVE],[NOWARN] "
     },
+    // 07 Network
     "WebGet": { 
         "prefix": "WebGet",
         "body": [
@@ -353,6 +473,16 @@
         ],
         "description": "WebGet,<URL>,<DestPath>,[HashType=HashDigest],[TimeOut=],[Referer=],[UserAgent=],[NOERR] "
     },
+    // 08 Hash
+    "Hash": { 
+        "prefix": "Hash",
+        "body": [
+            "Hash,${1:<HashType>},${2:<FilePath>},${3:DestVar>}",
+            "$0"
+        ],
+        "description": "Hash,<HashType>,<FilePath>,<%DestVar%> "
+    },
+    // 09 Script
     "ExtractFile": { 
         "prefix": "ExtractFile",
         "body": [
@@ -385,6 +515,7 @@
         ],
         "description": "Encode,<ScriptFile>,<DirName>,<FileName>,[Compression] "
     },
+    // 10 Interface
     "Visible": { 
         "prefix": "Visible",
         "body": [
@@ -457,14 +588,7 @@
         ],
         "description": "AddInterface,<ScriptFile>,<Interface>,<Prefix> "
     },
-    "Hash": { 
-        "prefix": "Hash",
-        "body": [
-            "Hash,${1:<HashType>},${2:<FilePath>},${3:DestVar>}",
-            "$0"
-        ],
-        "description": "Hash,<HashType>,<FilePath>,<%DestVar%> "
-    },
+    // 20 String
     "StrFormat,IntToBytes": { 
         "prefix": "StrFormat,IntToBytes",
         "body": [
@@ -721,6 +845,7 @@
         ],
         "description": "StrFormat,PadRight,<SrcStr>,<Count>,<PadChar>,<%DestVar%> "
     },
+    // 21 Math
     "Math,Add": { 
         "prefix": "Math,Add",
         "body": [
@@ -937,6 +1062,7 @@
             "$0"
         ]
     },
+    // 22 List
     "List,Get": { 
         "prefix": "List,Get",
         "body": [
@@ -1065,118 +1191,7 @@
             "$0"
         ]
     },
-    "WimMount": { 
-        "prefix": "WimMount",
-        "body": [
-            "WimMount,${1:<SrcWim>},${2:<ImageIndex>},${3:<MountDir>},${4:<MountOption>}",
-            "$0"
-        ],
-        "description": "WimMount,<SrcWim>,<ImageIndex>,<MountDir>,<MountOption> "
-    },
-    "WimUnmount": { 
-        "prefix": "WimUnmount",
-        "body": [
-            "WimUnmount,${1:<MountDir>},${2:<UnmountOption>}",
-            "$0"
-        ],
-        "description": "WimUnmount,<MountDir>,<UnmountOption> "
-    },
-    "WimInfo": { 
-        "prefix": "WimInfo",
-        "body": [
-            "WimInfo,${1:<SrcWim>},${2:<ImageIndex>},${3:<Key>},${4:<%DestVar%>}",
-            "$0"
-        ],
-        "description": "WimInfo,<SrcWim>,<ImageIndex>,<Key>,<%DestVar%>,[NOERR] "
-    },
-    "WimApply": { 
-        "prefix": "WimApply",
-        "body": [
-            "WimApply,${1:<SrcWim>},${2:<ImageIndex>},${3:<DestDir>}",
-            "$0"
-        ],
-        "description": "WimApply,<SrcWim>,<ImageIndex>,<DestDir>,[Split=<Str>],[CHECK],[NOACL],[NOATTRIB] "
-    },
-    "WimExtract": { 
-        "prefix": "WimExtract",
-        "body": [
-            "WimExtract,${1:<SrcWim>},${2:<ImageIndex>},${3:<ExtractPath>},${4:<DestDir>}",
-            "$0"
-        ],
-        "description": "WimExtract,<SrcWim>,<ImageIndex>,<ExtractPath>,<DestDir>,[Split=<Str>],[CHECK],[NOACL],[NOATTRIB] "
-    },
-    "WimExtractBulk": { 
-        "prefix": "WimExtractBulk",
-        "body": [
-            "WimExtractBulk,${1:<SrcWim>},${2:<ImageIndex>},${3:<ListFile>},${3:<DestDir>}",
-            "$0"
-        ],
-        "description": "WimExtractBulk,<SrcWim>,<ImageIndex>,<ListFile>,<DestDir>,[Split=<Str>],[CHECK],[NOACL],[NOATTRIB],[NOERR],[NOWARN] "
-    },
-    "WimCapture": { 
-        "prefix": "WimCapture",
-        "body": [
-            "WimCapture,${1:<SrcWim>},${2:<DestWim>},${3:<Compress>},${4:[ImageName=<Str>],${5:[ImageDesc=<Str>]",
-            "$0"
-        ],
-        "description": "WimCapture,<SrcDir>,<DestWim>,<Compress>,[ImageName=<Str>],[ImageDesc=<Str>],[Flags=<Str>],[BOOT],[CHECK],[NOACL] "
-    },
-    "WimAppend": { 
-        "prefix": "WimAppend",
-        "body": [
-            "WimAppend,${1:<SrcDir>},${2:<DestWim>},${3:[ImageName=<Str>},${4:[ImageDesc=<Str>]",
-            "$0"
-        ],
-        "description": "WimAppend,<SrcDir>,<DestWim>,[ImageName=<Str>],[ImageDesc=<Str>],[Flags=<Str>],[DeltaIndex=INT],[BOOT],[CHECK],[NOACL] "
-    },
-    "WimDelete": { 
-        "prefix": "WimDelete",
-        "body": [
-            "WimDelete,${1:<SrcWim>},${2:<ImageIndex>}",
-            "$0"
-        ],
-        "description": "WimDelete,<SrcWim>,<ImageIndex>,[CHECK] "
-    },
-    "WimPathAdd": { 
-        "prefix": "WimPathAdd",
-        "body": [
-            "WimPathAdd,${1:<WimFile>},${2:<ImageIndex>},${3:<SrcPath>},${4:<DestPath>}",
-            "$0"
-        ],
-        "description": "WimPathAdd,<WimFile>,<ImageIndex>,<SrcPath>,<DestPath>,[CHECK],[NOACL],[PRESERVE],[REBUILD] "
-    },
-    "WimPathDelete": { 
-        "prefix": "WimPathDelete",
-        "body": [
-            "WimPathDelete,${1:<WimFile>},${2:<ImageIndex>},${3:<Path>}",
-            "$0"
-        ],
-        "description": "WimPathDelete,<WimFile>,<ImageIndex>,<Path>,[CHECK],[REBUILD] "
-    },
-    "WimPathRename": { 
-        "prefix": "WimPathRename",
-        "body": [
-            "WimPathRename,${1:<WimFile>},${2:<ImageIndex>},${3:<SrcPath>},${4:<DestPath>}",
-            "$0"
-        ],
-        "description": "WimPathRename,<WimFile>,<ImageIndex>,<SrcPath>,<DestPath>,[CHECK],[REBUILD] "
-    },
-    "WimOptimize": { 
-        "prefix": "WimOptimize",
-        "body": [
-            "WimOptimize,${1:<WimFile>}",
-            "$0"
-        ],
-        "description": "WimOptimize,<WimFile>,[Recomp=<Str>],[CHECK|NOCHECK] "
-    },
-    "WimExport": { 
-        "prefix": "WimExport",
-        "body": [
-            "WimExport,${1:<SrcWim>},${2:<ImageIndex>},${3:<DestWim>},${4:[ImageName=<Str>},${5:[ImageDesc=<Str>]",
-            "$0"
-        ],
-        "description": "WimExport,<SrcWim>,<ImageIndex>,<DestWim>,[ImageName=<Str>],[ImageDesc=<Str>],[Split=<Str>],[Recomp=<Str>],[BOOT],[CHECK|NOCHECK] "
-    },
+    // 08 Branch
     "Run": { 
         "prefix": "Run",
         "body": [
@@ -1481,6 +1496,7 @@
         ],
         "description": "If,Question,<Message>,<Timeout>,<DefaultChoice>,<Command> "
     },
+    // 81 Control
     "Set": { 
         "prefix": "Set",
         "body": [
@@ -1521,14 +1537,6 @@
         ],
         "description": "Halt,<Message>,[NOWARN] "
     },
-    "Return": { 
-        "prefix": "Return",
-        "body": [
-            "Return,${1:[VALUE]}",
-            "$0"
-        ],
-        "description": "Return,[VALUE] "
-    },
     "Wait": { 
         "prefix": "Wait",
         "body": [
@@ -1545,6 +1553,15 @@
         ],
         "description": "Beep,<Type> "
     },
+    "Return": { 
+        "prefix": "Return",
+        "body": [
+            "Return,${1:[VALUE]}",
+            "$0"
+        ],
+        "description": "Return,[VALUE] "
+    },
+    // 82 System
     "System,Cursor": { 
         "prefix": "System,Cursor",
         "body": [
