@@ -156,7 +156,7 @@
                 },
                 {
                     "name": "keyword.control.pebakery",
-                    "match": "(?i)\\b(Run|Exec|Loop|LoopLetter|RunEx|LoopEx|LoopLetterEx|If|Else|Begin|End)\\b"
+                    "match": "(?i)\\b(Run|Exec|Loop|LoopLetter|RunEx|LoopEx|LoopLetterEx|If|Else|Begin|End|While|ForRange|ForEach|Break|Continue)\\b"
                 },
                 {
                     "name": "keyword.control.pebakery",
@@ -204,11 +204,11 @@
                 },
                 {
                     "name": "entity.name.function.pebakery",
-                    "match": "(?i)\\b(Add|Sub|Mul|Div|IntDiv|Neg|ToSign|ToUnsign|BoolAnd|BoolOr|BoolXor|BoolNot|BitAnd|BitOr|BitXor|BitNot|BitShift|Floor|Ceil|Round|Abs|Pow|Hex|Dec|Rand)\\b"
+                    "match": "(?i)\\b(Add|Sub|Mul|Div|IntDiv|Neg|ToSign|ToUnsign|BoolAnd|BoolOr|BoolXor|BoolNot|BitAnd|BitOr|BitXor|BitNot|BitShift|Floor|Ceil|Round|Abs|Pow|Hex|Dec|Rand|ToChar|FromChar)\\b"
                 },
                 {
                     "name": "entity.name.function.pebakery",
-                    "match": "(?i)\\b(Get|Append|Insert|Remove|RemoveX|RemoveAt|Count|Pos|PosX|LastPos|LastPosX|Sort|SortX|SortN|SortNX)\\b"
+                    "match": "(?i)\\b(Get|Append|Insert|Remove|RemoveX|RemoveAt|Count|Pos|PosX|LastPos|LastPosX|Sort|SortX|SortN|SortNX|Range)\\b"
                 },
                 {
                     "name": "entity.name.function.pebakery",

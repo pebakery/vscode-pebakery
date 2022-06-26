@@ -921,10 +921,26 @@
         ],
         "description": "Math,Rand,<%DestVar%>[,<Min>,<Max>] "
     },
+    "Math,ToChar": { 
+        "prefix": "Math,ToChar",
+        "description": "Converts an numerical code point to it's mapped character.",
+        "body": [
+            "Math,ToChar,${1:<%DestVar%>},${2:[<CodePoint>}",
+            "$0"
+        ]
+    },
+    "Math,FromChar": { 
+        "prefix": "Math,FromChar",
+        "description": "Converts an mapped character to it's numerical code point (in Hex).",
+        "body": [
+            "Math,FromChar,${1:<%DestVar%>},${2:<Char>}",
+            "$0"
+        ]
+    },
     "List,Get": { 
         "prefix": "List,Get",
         "body": [
-            "List,Get,${1:<%ListVar%>},${2:<Index>},${3:<%DestVar%>},${4:[Delim=<Str>]}",
+            "List,Get,${1:<%ListVar%>},${2:<Index>},${3:<%DestVar%>},${4:[Delim=|]}",
             "$0"
         ],
         "description": "List,Get,<%ListVar%>,<Index>,<%DestVar%>,[Delim=<Str>] "
@@ -932,7 +948,7 @@
     "List,Set": { 
         "prefix": "List,Set",
         "body": [
-            "List,Set,${1:<%ListVar%>},${2:<Index>},${3:<Item>},${4:[Delim=<Str>]}",
+            "List,Set,${1:<%ListVar%>},${2:<Index>},${3:<Item>},${4:[Delim=|]}",
             "$0"
         ],
         "description": "List,Set,<%ListVar%>,<Index>,<Item>,[Delim=<Str>] "
@@ -940,7 +956,7 @@
     "List,Append": { 
         "prefix": "List,Append",
         "body": [
-            "List,Append,${1:<%ListVar%>},${2:<Item>},${3:[Delim=<Str>]}",
+            "List,Append,${1:<%ListVar%>},${2:<Item>},${3:[Delim=|]}",
             "$0"
         ],
         "description": "List,Append,<%ListVar%>,<Item>,[Delim=<Str>] "
@@ -948,7 +964,7 @@
     "List,Insert": { 
         "prefix": "List,Insert",
         "body": [
-            "List,Insert,${1:<%ListVar%>},${2:<Index>},${3:<Item>},${4:[Delim=<Str>]}",
+            "List,Insert,${1:<%ListVar%>},${2:<Index>},${3:<Item>},${4:[Delim=|]}",
             "$0"
         ],
         "description": "List,Insert,<%ListVar%>,<Index>,<Item>,[Delim=<Str>] "
@@ -956,7 +972,7 @@
     "List,Remove": { 
         "prefix": "List,Remove",
         "body": [
-            "List,Remove,${1:<%ListVar%>},${2:<Item>},${3:[Delim=Str]}",
+            "List,Remove,${1:<%ListVar%>},${2:<Item>},${3:[Delim=|]}",
             "$0"
         ],
         "description": "List,Remove,<%ListVar%>,<Item>,[Delim=<Str>] "
@@ -964,7 +980,7 @@
     "List,RemoveAt": { 
         "prefix": "List,RemoveAt",
         "body": [
-            "List,RemoveAt,${1:<%ListVar%>},${2:<Index>},${3:[Delim=Str]}",
+            "List,RemoveAt,${1:<%ListVar%>},${2:<Index>},${3:[Delim=|]}",
             "$0"
         ],
         "description": "List,RemoveAt,<%ListVar%>,<Index>,[Delim=<Str>] "
@@ -972,7 +988,7 @@
     "List,Count": { 
         "prefix": "List,Count",
         "body": [
-            "List,Count,${1:<%ListVar%>},${2:<%DestVar%>},${3:[Delim=<Str>]}",
+            "List,Count,${1:<%ListVar%>},${2:<%DestVar%>},${3:[Delim=|]}",
             "$0"
         ],
         "description": "List,Count,<%ListVar%>,<%DestVar%>,[Delim=<Str>] "
@@ -980,7 +996,7 @@
     "List,Pos": { 
         "prefix": "List,Pos",
         "body": [
-            "List,Pos,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=<Str>]}",
+            "List,Pos,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=|]}",
             "$0"
         ],
         "description": "List,Pos,<%ListVar%>,<Item>,<%DestVar%>,[Delim=<Str>] "
@@ -988,7 +1004,7 @@
     "List,PosX": { 
         "prefix": "List,PosX",
         "body": [
-            "List,PosX,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=<Str>]}",
+            "List,PosX,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=|]}",
             "$0"
         ],
         "description": "List,PosX,<%ListVar%>,<Item>,<%DestVar%>,[Delim=<Str>] "
@@ -996,7 +1012,7 @@
     "List,LastPos": { 
         "prefix": "List,LastPos",
         "body": [
-            "List,LastPos,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=<Str>]}",
+            "List,LastPos,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=|]}",
             "$0"
         ],
         "description": "List,LastPos,<%ListVar%>,<Item>,<%DestVar%>,[Delim=<Str>] "
@@ -1004,7 +1020,7 @@
     "List,LastPosX": { 
         "prefix": "List,LastPosX",
         "body": [
-            "List,LastPosX,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=<Str>]}",
+            "List,LastPosX,${1:<%ListVar%>},${2:<Item>},${3:<%DestVar%>},${4:[Delim=|>]}",
             "$0"
         ],
         "description": "List,LastPosX,<%ListVar%>,<Item>,<%DestVar%>,[Delim=<Str>] "
@@ -1012,7 +1028,7 @@
     "List,Sort": { 
         "prefix": "List,Sort",
         "body": [
-            "List,Sort,${1:<%ListVar%>},${2:<Asc|Desc>},${4:[Delim=<Str>]}",
+            "List,Sort,${1:<%ListVar%>},${2:<Asc|Desc>},${4:[Delim=|]}",
             "$0"
         ],
         "description": "List,Sort,<%ListVar%>,<Asc|Desc>,[Delim=<Str>] "
@@ -1020,7 +1036,7 @@
     "List,SortX": { 
         "prefix": "List,SortX",
         "body": [
-            "List,SortX,${1:<%ListVar%>},${2:<Asc|Desc>},${4:[Delim=<Str>]}",
+            "List,SortX,${1:<%ListVar%>},${2:<Asc|Desc>},${4:[Delim=|]}",
             "$0"
         ],
         "description": "List,SortX,<%ListVar%>,<Asc|Desc>,[Delim=<Str>] "
@@ -1028,7 +1044,7 @@
     "List,SortN": { 
         "prefix": "List,SortN",
         "body": [
-            "List,SortN,${1:<%ListVar%>},${2:<Asc|Desc>},${4:[Delim=<Str>]}",
+            "List,SortN,${1:<%ListVar%>},${2:<Asc|Desc>},${4:[Delim=|]}",
             "$0"
         ],
         "description": "List,SortN,<%ListVar%>,<Asc|Desc>,[Delim=<Str>] "
@@ -1039,7 +1055,15 @@
             "List,SortNX,${1:<%ListVar%>},${2:<Asc|Desc>},${4:[Delim=<Str>]}",
             "$0"
         ],
-        "description": "List,SortNX,<%ListVar%>,<Asc|Desc>,[Delim=<Str>] "
+        "description": "List,SortNX,<%ListVar%>,<Asc|Desc>,[Delim=|] "
+    },
+    "List,Range": { 
+        "prefix": "List,Range",
+        "description": "Generate a list of values from a given number range.",
+        "body": [
+            "List,Range,${1:<Start>},${2:<End>},${4:<Step>},${5:[Delim=|]}",
+            "$0"
+        ]
     },
     "WimMount": { 
         "prefix": "WimMount",
@@ -1240,6 +1264,46 @@
             "$0"
         ],
         "description": "Loop,BREAK "
+    },
+    "While": { 
+        "prefix": "While",
+        "description": "Loops command(s) based on an expression.",
+        "body": [
+            "While,${1:<Expression>},${2:<Command>}",
+            "$0"
+        ]
+    },
+    "ForRange": { 
+        "prefix": "ForRange",
+        "description": "Loops through command(s) based on the value of a counter.",
+        "body": [
+            "ForRange,${1:<%Var%>},${2:<Start>},${3:<End>},${4:<Step>},${5:<Command>}",
+            "$0"
+        ]
+    },
+    "ForEach": { 
+        "prefix": "ForEach",
+        "description": "Enumerates the elements of a list and executes command(s) for each element in the list.",
+        "body": [
+            "ForEach,${1:<%Var%>},${2:<List>},${3:<Command>}",
+            "$0"
+        ]
+    },
+    "Break": { 
+        "prefix": "Break",
+        "description": "Terminate execution of a While/ForEach/ForRange loop.",
+        "body": [
+            "Break",
+            "$0"
+        ]
+    },
+    "Continue": { 
+        "prefix": "Continue",
+        "description": "Continue execution of a While/ForEach/ForRange loop.",
+        "body": [
+            "Continue",
+            "$0"
+        ]
     },
     "If,Equal": { 
         "prefix": "If,Equal",
