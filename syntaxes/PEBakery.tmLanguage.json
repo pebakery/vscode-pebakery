@@ -17,15 +17,23 @@
             "patterns": [
                 {
                     "name": "punctuation.separator.pebakery",
-                    "match": "[, ]"
+                    "match": "[=,]"
                 }
             ]
         },
         "comments": {
             "patterns": [
                 {
-                    "name": "comment.line.pebakery",
-                    "match": "^[\\s]*(//|#|;).*$"
+                    "name": "comment.line.double-slash",
+                    "match": "^[\\t ]*//.*$"
+                },
+                {
+                    "name": "comment.line.number-sign.pebakery",
+                    "match": "^[\\t ]*#.*$"
+                },
+                {
+                    "name": "comment.line.semicolon.pebakery",
+                    "match": "^[\\t ]*;.*$"
                 }
             ]
         },
@@ -36,7 +44,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.pebakery",
-					"match": "(#\\$(c|p|q|s|t|x)|##|%[^%]+%)"
+					"match": "(#\\$(c|p|q|s|t|x)|##|#([0-9]|o[0-9]|c|a|r)|%[^%]+%)"
 				}
 			]
         },
@@ -75,7 +83,7 @@
                     "match": "\\b0x[0-9a-fA-F]+\\b"
                 },
                 {
-                    "name": "constant.numeric.float.pebakery",
+                    "name": "constant.numeric.version.pebakery",
                     "match": "\\b[0-9]+\\.[0-9]+(\\.[0-9]+)?(\\.[0-9]+)?\\b"
                 },
                 {

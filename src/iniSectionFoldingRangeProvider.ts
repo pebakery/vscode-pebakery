@@ -8,18 +8,16 @@ export class IniSectionFoldingRangeProvider implements vscode.FoldingRangeProvid
     provideFoldingRanges(document: vscode.TextDocument, context: vscode.FoldingContext, token: vscode.CancellationToken): vscode.ProviderResult<vscode.FoldingRange[]> {
         let foldingRanges: vscode.FoldingRange[] = [];
 
-        let sectionRegex: RegExp = /^\[[^\]]+\]/;
         let lastIdx: number = -1; // Last index where the section name was found
         let endEmptyLines: number = 0; // empty line counter
 
         for (let i = 0; i < document.lineCount; i++) {
-            const textline: vscode.TextLine = document.lineAt(i);
-            const line: string = textline.text.trim();
-            if (line.match(sectionRegex)) {
+            const line: string = document.lineAt(i).text.trim();
+            if (line.startsWith("[") && line.endsWith("]")) {
                 if (lastIdx === -1) {
                     lastIdx = i;
                 } else {
-                    foldingRanges.push(new vscode.FoldingRange(lastIdx, i - 1 - endEmptyLines, vscode.FoldingRangeKind.Region));
+                    foldingRanges.push(new vscode.FoldingRange(lastIdx, i - endEmptyLines - 1, vscode.FoldingRangeKind.Region));
                     // Reset line states
                     lastIdx = i;
                 }
@@ -33,7 +31,7 @@ export class IniSectionFoldingRangeProvider implements vscode.FoldingRangeProvid
         }
         
         if (lastIdx !== -1) {
-            foldingRanges.push(new vscode.FoldingRange(lastIdx, document.lineCount - 1 - endEmptyLines, vscode.FoldingRangeKind.Region));
+            foldingRanges.push(new vscode.FoldingRange(lastIdx, document.lineCount - endEmptyLines - 1, vscode.FoldingRangeKind.Region));
         }
 
         return foldingRanges;
